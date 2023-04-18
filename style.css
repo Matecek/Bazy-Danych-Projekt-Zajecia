@@ -1,0 +1,49 @@
+body{
+    font-family: calibri, Arial, Tahoma;
+    color: #222222;
+}
+
+#main{
+    width: 1200px;
+    min-height: 800px;
+    margin: auto;
+}  
+
+#logo{
+    background: url(img/bg.jpeg);
+    width: 1160px;
+    height: 150px;
+    padding: 20px;
+    color: #000000;
+}
+
+#menu{
+    background-color: #ff0000;
+    color: #ffffff;
+    font-size: 28px;
+    width: 1200px;
+    height: 32px;
+}
+
+#strona{
+    border: 1px solid #cdcdcd;
+    width: 1178px;
+    min-height: 400px;
+    padding: 10px;
+}
+
+b:hover{
+    background-color: #ff4545;
+    cursor: pointer;
+}
+
+table thead{
+    background-color: #00e5ff;
+    color: #ffffff;
+    font-size: 26px;
+}
+
+table tr:hover{
+    background-color: #9cf5ff;
+    color: #000000;
+}
