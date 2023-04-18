@@ -24,3 +24,20 @@ $(document).ready(function(){
         $("#strona").load("operacje.php");
     }); 
 });
+
+
+$(document).ready(function(){
+    $("#dodajKlienta").submit(function(){
+
+        $.ajax({url: "dodajKlienta.php", 
+        type: "POST", 
+        data: $("#dodajKlienta").serialize(), 
+        cache: false, 
+        success: function(response) {
+            $("#lista").append(response);
+        }
+        
+        })  
+       return false;
+    })
+});

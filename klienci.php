@@ -1,5 +1,5 @@
 <h2>Klienci</h2>
- 
+
 <table border="1">
     <thead><td>Lp.</td><td>Nazwa</td><td>Ulica</td><td>Numer</td><td>Kod i Miasto</td><td>Operacje</td></thead>
 
@@ -36,11 +36,15 @@
 
 <hr>
 <h2>Dodaj klienta</h2>
-<form method="POST" action="dodajKlienta.php">
+<form method="POST" action="dodajKlienta.php" id="dodajKlienta">
     Nazwa: <input type="text" name="f_nazwa"><br>
     Ulica: <input type="text" name="f_ulica"><br>
     Numer: <input type="text" name="f_numer"><br>
     Kod Pocztowy: <input type="text" name="f_kod"><br>
     Miejścowość: <input type="text" name="f_miejscowosc"><br><br>
-    <input type="submit" value="Dodaj Klienta">
+    <button type="submit">Dodaj Klienta</button>
 </form>
+
+<ul id="lista">
+
+</ul>
