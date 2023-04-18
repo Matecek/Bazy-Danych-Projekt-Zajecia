@@ -1,5 +1,5 @@
 <h2>Towary</h2>
-
+ 
 <table border="1">
     <thead><td>Lp.</td><td>Nazwa</td><td>Opis</td><td>Ilość</td><td>Cena</td><td>Operacje</td></thead>
 

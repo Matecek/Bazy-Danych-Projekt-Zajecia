@@ -5,7 +5,7 @@ $ulica=$_POST['f_ulica'];
 $numer=$_POST['f_numer'];
 $kod=$_POST['f_kod'];
 $miejscowojsc=$_POST['f_miejscowosc'];
-
+ 
 include 'dbconfig.php';
 
     $baza = mysqli_connect($server,$user,$pass,$base) or ('cos nie tak z połączeniem z BD');

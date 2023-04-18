@@ -5,7 +5,7 @@ function strona_home(){
     alert("xyz");
 }
 */
-//___________jQuery______________
+//___________jQuery______________ 
 
 $(document).ready(function(){
     $("#home").click(function(){

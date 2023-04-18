@@ -4,7 +4,7 @@ $nazwaT=$_POST['f_nazwaT'];
 $opis=$_POST['f_opis'];
 $ilosc=$_POST['f_ilosc'];
 $cena=$_POST['f_cena'];
-
+ 
 include 'dbconfig.php';
 
     $baza = mysqli_connect($server,$user,$pass,$base) or ('cos nie tak z połączeniem z BD');

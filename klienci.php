@@ -1,5 +1,5 @@
 <h2>Klienci</h2>
-
+ 
 <table border="1">
     <thead><td>Lp.</td><td>Nazwa</td><td>Ulica</td><td>Numer</td><td>Kod i Miasto</td><td>Operacje</td></thead>
 
