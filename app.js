@@ -23,7 +23,5 @@ $(document).ready(function(){
     $("#operacje").click(function(){
         $("#strona").load("operacje.php");
     });
-    $("#wroc").click(function(){
-        $("#strona").load("klienci.php");
-    });
+    return false;
 });

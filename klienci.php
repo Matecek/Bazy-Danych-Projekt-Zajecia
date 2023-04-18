@@ -21,11 +21,11 @@
                 echo "<td>".$wiersz['numer']."</td>";
                 echo "<td>".$wiersz['kod pocztowy']." ".$wiersz['miejscowość']."</td>";
                 echo "<td>";
-                echo "<form method='POST' action=delkient.php>";
-                echo "<input type='text' value='";
+                echo "<form method='POST' action=delklient.php>";
+                echo "<input type='text' style='margin-right:40px; width:25px;' value='";
                 echo $wiersz['id'];
                 echo "'>";
-                echo "<input type='submit' vlaue='X'></form>";
+                echo "<input type='submit' value='X'></form>";
                 echo "</td>";
                 echo "</tr>";
             };

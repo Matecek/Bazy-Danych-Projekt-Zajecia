@@ -14,12 +14,20 @@
             $n=0;
             while($wiersz = $result->fetch_assoc()){
                 $n++;
-                echo "<tr><td>".$n."</td><td>"
-                .$wiersz['nazwa']."</td><td>"
-                .$wiersz['opis']."</td><td>"
-                .$wiersz['ilosc']."</td><td>"
-                .$wiersz['cena']."</td><td>"." E X "."</td></tr>";
-                
+                echo "<tr>";
+                echo "<td>".$n."</td>";
+                echo "<td>".$wiersz['nazwa']."</td>";
+                echo "<td>".$wiersz['opis']."</td>";
+                echo "<td>".$wiersz['ilosc']."</td>";
+                echo "<td>".$wiersz['cena']."</td>";
+                echo "<td>";
+                echo "<form method='POST' action=deltowar.php>";
+                echo "<input type='text' style='margin-right:40px; width:25px;' value='";
+                echo $wiersz['id'];
+                echo "'>";
+                echo "<input type='submit' value='X'></form>";
+                echo "</td>";
+                echo "</tr>";
             }
 
         $baza->close();
