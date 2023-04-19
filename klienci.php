@@ -1,11 +1,11 @@
 <script type="text/javascript">
 //Usuwanie klienta
 $(document).ready(function(){
-    $('#form_del').submit(function(){       
+    $('#delklient').submit(function(){       
         
         $.ajax({url: 'delklient.php',
             type: 'POST',
-            data: $("#form_del").serialize(),
+            data: $("#delklient").serialize(),
             cache: false,
             success: function(response) {
                 //alert(response);
@@ -59,7 +59,7 @@ $(document).ready(function(){
             echo "<td>".$wiersz['kod pocztowy']." ".$wiersz['miejscowość']."</td>"; 
             echo "<td>"." E ";
                 
-            echo"<form method='POST' action='delklient.php' id='form_del'>";
+            echo"<form method='POST' action='delklient.php' id='delklient'>";
             echo "<input type='text' value='".$wiersz['id']."' name='f_id' hidden>";
             echo "<button type='submit'> X </button>";
             echo "</form>";
