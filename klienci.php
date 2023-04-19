@@ -81,4 +81,4 @@ $(document).ready(function(){
     Kod Pocztowy: <input type="text" name="f_kod"><br>
     Miejścowość: <input type="text" name="f_miejscowosc"><br><br>
     <button type="submit">Dodaj Klienta</button>
-</form>
+</form> 

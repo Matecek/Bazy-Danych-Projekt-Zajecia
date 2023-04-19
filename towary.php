@@ -79,4 +79,4 @@ $(document).ready(function(){
     Ilość: <input type="text" name="f_ilosc"><br>
     Cena: <input type="text" name="f_cena"><br><br>
     <input type="submit" value="Dodaj Towar">
-</form>
+</form> 
