@@ -1,3 +1,39 @@
+<script type="text/javascript">
+//Usuwanie klienta
+$(document).ready(function(){
+    $('#form_del').submit(function(){       
+        $.ajax({    url: 'deltowar.php',
+                    type: 'POST',
+                    data: $("#form_del").serialize(),
+                    cache: false,
+                    success: function(response) {
+                                        //alert(response);
+                                        $("#strona").load("towary.php");
+                                        }
+                }); 
+                return false;
+          });
+});
+
+//Dodawanie klienta
+$(document).ready(function(){
+    $("#dodajTowar").submit(function(){
+
+        $.ajax({url: "dodajtowar.php", 
+        type: "POST", 
+        data: $("#dodajTowar").serialize(), 
+        cache: false, 
+        success: function(response) {
+            //$("#lista").append(response);
+            $("#strona").load("towary.php");
+        }
+        
+        })  
+       return false;
+    })
+});
+</script>
+
 <h2>Towary</h2>
  
 <table border="1">
@@ -20,12 +56,13 @@
                 echo "<td>".$wiersz['opis']."</td>";
                 echo "<td>".$wiersz['ilosc']."</td>";
                 echo "<td>".$wiersz['cena']."</td>";
-                echo "<td>";
-                echo "<form method='POST' action=deltowar.php>";
-                echo "<input type='text' style='margin-right:40px; width:25px;' value='";
-                echo $wiersz['id'];
-                echo "'>";
-                echo "<input type='submit' value='X'></form>";
+                echo "<td>"." E ";
+
+                echo"<form method='POST' action='deltowar.php' id='form_del'>";
+                echo "<input type='text' value='".$wiersz['id']."' name='f_id' hidden>";
+                echo "<button type='submit'> X </button>";
+                echo "</form>";
+
                 echo "</td>";
                 echo "</tr>";
             }
@@ -36,7 +73,7 @@
 
 <hr>
 <h2>Dodaj towar</h2>
-<form method="POST" action="dodajTowar.php">
+<form method="POST" action="dodajtowar.php" id="dodajTowar">
     Nazwa: <input type="text" name="f_nazwaT"><br>
     Opis: <input type="text" name="f_opis"><br>
     Ilość: <input type="text" name="f_ilosc"><br>
