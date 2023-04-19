@@ -1,40 +1,3 @@
-<script type="text/javascript">
-//Usuwanie klienta
-$(document).ready(function(){
-    $('#form_del').submit(function(){       
-        
-        $.ajax({url: 'delklient.php',
-            type: 'POST',
-            data: $("#form_del").serialize(),
-            cache: false,
-            success: function(response) {
-                //alert(response);
-                $("#strona").load("klienci.php");
-            }
-        }); 
-        return false;
-    });
-});
-
-//Dodawanie klienta
-$(document).ready(function(){
-    $("#dodajKlienta").submit(function(){
-
-        $.ajax({url: "dodajklienta.php", 
-        type: "POST", 
-        data: $("#dodajKlienta").serialize(), 
-        cache: false, 
-        success: function(response) {
-            //$("#lista").append(response);
-            $("#strona").load("klienci.php");
-        }
-        
-        })  
-       return false;
-    })
-});
-</script>
-
 <h2>Klienci</h2>
 
 <table border="1">
@@ -42,34 +5,33 @@ $(document).ready(function(){
 
     <?php
 
-    include 'dbconfig.php';
-    $baza = mysqli_connect($server,$user,$pass,$base) or ('coś nie tak z połączniem z BD');
+        include 'dbconfig.php';
 
-    $zapytanie="SELECT * FROM klienci ORDER BY nazwa ASC";
-    $result = $baza->query($zapytanie) or die ('bledne zapytanie');
-    $n=0;
-        while($wiersz = $result->fetch_assoc())
-            {
-            $n++;			
-            echo "<tr>";
-            echo "<td>".$n."</td>";
-            echo "<td>".$wiersz['nazwa']."</td>";
-            echo "<td>".$wiersz['ulica']."</td>";
-            echo "<td>". $wiersz['numer']."</td>";
-            echo "<td>".$wiersz['kod pocztowy']." ".$wiersz['miejscowość']."</td>"; 
-            echo "<td>"." E ";
-                
-            echo"<form method='POST' action='delklient.php' id='form_del'>";
-            echo "<input type='text' value='".$wiersz['id']."' name='f_id' hidden>";
-            echo "<button type='submit'> X </button>";
-            echo "</form>";
-                
-            echo "</td>";
-            echo "</tr>";
+        $baza = mysqli_connect($server,$user,$pass,$base) or ('cos nie tak z połączeniem z BD');
+
+            $zapytanie = "SELECT * FROM klienci ORDER BY nazwa ASC";
+            $result = $baza->query($zapytanie) or die ('bledne zapytanie');
+            $n=0;
+            while($wiersz = $result->fetch_assoc()){
+                $n++;
+                echo "<tr>";
+                echo "<td>".$n."</td>";
+                echo "<td>".$wiersz['nazwa']."</td>";
+                echo "<td>".$wiersz['ulica']."</td>";
+                echo "<td>".$wiersz['numer']."</td>";
+                echo "<td>".$wiersz['kod pocztowy']." ".$wiersz['miejscowość']."</td>";
+                echo "<td>";
+                echo "<form method='POST' action=delklient.php>";
+                echo "<input type='text' style='margin-right:40px; width:25px;' value='";
+                echo $wiersz['id'];
+                echo "'>";
+                echo "<input type='submit' value='X'></form>";
+                echo "</td>";
+                echo "</tr>";
             };
 
-    $baza->close();
-?>
+        $baza->close();
+    ?>
 </table>
 
 <hr>

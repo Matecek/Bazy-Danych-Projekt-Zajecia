@@ -1,8 +1,7 @@
 <script type="text/javascript">
 //Usuwanie klienta
 $(document).ready(function(){
-    $('#form_del').submit(function(){       
-    
+    $('#form_del').submit(function(){        
     $.ajax({url: 'deltowar.php',
             type: 'POST',
             data: $("#form_del").serialize(),
