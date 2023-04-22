@@ -1,39 +1,3 @@
-<script type="text/javascript">
-//Usuwanie klienta
-$(document).ready(function(){
-    $('#form_del').submit(function(){        
-    $.ajax({url: 'deltowar.php',
-            type: 'POST',
-            data: $("#form_del").serialize(),
-            cache: false,
-            success: function(response) {
-                //alert(response);
-                $("#strona").load("towary.php");
-                }
-         }); 
-        return false;
-    });
-});
-
-//Dodawanie klienta
-$(document).ready(function(){
-    $("#dodajTowar").submit(function(){
-
-        $.ajax({url: "dodajtowar.php", 
-        type: "POST", 
-        data: $("#dodajTowar").serialize(), 
-        cache: false, 
-        success: function(response) {
-            //$("#lista").append(response);
-            $("#strona").load("towary.php");
-        }
-        
-        })  
-       return false;
-    })
-});
-</script>
-
 <h2>Towary</h2>
  
 <table border="1">
@@ -80,3 +44,39 @@ $(document).ready(function(){
     Cena: <input type="text" name="f_cena"><br><br>
     <input type="submit" value="Dodaj Towar">
 </form> 
+
+<script type="text/javascript">
+//Usuwanie klienta
+$(document).ready(function(){
+    $('#form_del').submit(function(){        
+    $.ajax({url: 'deltowar.php',
+            type: 'POST',
+            data: $("#form_del").serialize(),
+            cache: false,
+            success: function(response) {
+                //alert(response);
+                $("#strona").load("towary.php");
+                }
+         }); 
+        return false;
+    });
+});
+
+//Dodawanie klienta
+$(document).ready(function(){
+    $("#dodajTowar").submit(function(){
+
+        $.ajax({url: "dodajtowar.php", 
+        type: "POST", 
+        data: $("#dodajTowar").serialize(), 
+        cache: false, 
+        success: function(response) {
+            //$("#lista").append(response);
+            $("#strona").load("towary.php");
+        }
+        
+        })  
+       return false;
+    })
+});
+</script>
