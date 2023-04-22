@@ -1,40 +1,3 @@
-<script type="text/javascript">
-//Usuwanie klienta
-$(document).ready(function(){
-    $('#delklient').submit(function(){       
-        
-        $.ajax({url: 'delklient.php',
-            type: 'POST',
-            data: $("#delklient").serialize(),
-            cache: false,
-            success: function(response) {
-                //alert(response);
-                $("#strona").load("klienci.php");
-            }
-        }); 
-        return false;
-    });
-});
-
-//Dodawanie klienta
-$(document).ready(function(){
-    $("#dodajKlienta").submit(function(){
-
-        $.ajax({url: "dodajklienta.php", 
-        type: "POST", 
-        data: $("#dodajKlienta").serialize(), 
-        cache: false, 
-        success: function(response) {
-            //$("#lista").append(response);
-            $("#strona").load("klienci.php");
-        }
-        
-        })  
-       return false;
-    })
-});
-</script>
-
 <h2>Klienci</h2>
 
 <table border="1">
@@ -82,3 +45,40 @@ $(document).ready(function(){
     Miejścowość: <input type="text" name="f_miejscowosc"><br><br>
     <button type="submit">Dodaj Klienta</button>
 </form> 
+
+<script type="text/javascript">
+//Usuwanie klienta
+$(document).ready(function(){
+    $('#delklient').submit(function(){       
+        
+        $.ajax({url: 'delklient.php',
+            type: 'POST',
+            data: $("#delklient").serialize(),
+            cache: false,
+            success: function(response) {
+                //alert(response);
+                $("#strona").load("klienci.php");
+            }
+        }); 
+        return false;
+    });
+});
+
+//Dodawanie klienta
+$(document).ready(function(){
+    $("#dodajKlienta").submit(function(){
+
+        $.ajax({url: "dodajklienta.php", 
+        type: "POST", 
+        data: $("#dodajKlienta").serialize(), 
+        cache: false, 
+        success: function(response) {
+            //$("#lista").append(response);
+            $("#strona").load("klienci.php");
+        }
+        
+        })  
+       return false;
+    })
+});
+</script>
