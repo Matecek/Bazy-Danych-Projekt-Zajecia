@@ -51,7 +51,7 @@
 $(document).ready(function(){
     $('#delklient').submit(function(){       
         
-        $.ajax({url: 'delklient.php',
+        $.ajax({url: 'delklienta.php',
             type: 'POST',
             data: $("#delklient").serialize(),
             cache: false,
