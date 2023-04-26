@@ -28,4 +28,3 @@ $(document).ready(function(){
         $("#strona").load("login.php");
     })
 });
- 

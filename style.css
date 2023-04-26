@@ -40,7 +40,6 @@ div p#login{
 
 div p#login:hover{
     cursor: pointer;
-    font-size: 1.5rem;
 }
 
 b:hover{

@@ -1,7 +1,14 @@
-<h2>Serwis sklepu internetowego "Od A do Z"</h2>
+<?php
+    session_start();
+
+    if((isset($_SESSION['zalogowany'])) && ($_SESSION['zalogowany']==true)){
+        header('Location: index.php');
+        exit();
+    }
+?>
 <h2 class="center">Zaloguj się</h2>
 
-<form method="POST" action="zaloguj.php" id="zaloguj">
+<form method="POST" action="zaloguj.php">
     <table border="1" class="loguj">
         <tr><td>Nazwa użytkownika<td></tr>
         <tr><td><input type="text" name="login"></td></tr>

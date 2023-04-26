@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="pl-pl">
 <head>
@@ -20,6 +23,9 @@
         <div id="menu"><b id="home">HOME</b> | <b id="towary">Towary</b> | <b id="klienci">Klienci</b> | <b id="operacje">Operacje</b></div>
         <div id="strona">
             <h2>Serwis sklepu internetowego "Od A do Z"</h2>
+            <?php
+                echo "<h2>Witaj ".$_SESSION['user'].'! [<a href="logout.php">Wyloguj się</a>]';
+            ?>
         </div>
     </div>
 
