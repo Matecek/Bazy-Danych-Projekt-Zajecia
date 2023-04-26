@@ -91,13 +91,21 @@ table.loguj input[type=text], input[type=password]{
     height: 20px;
 }
 
+<<<<<<< HEAD
 table.loguj input[type=submit]{
+=======
+table.loguj button[type=submit]{
+>>>>>>> 9a2e64cb9c3fb8c22cf0e6b45ae3e855b721f157
     border-radius: 20px;
     height: 30px;
     font-size: 1.1rem;
 }
 
+<<<<<<< HEAD
 table.loguj input[type=submit]:hover{
+=======
+table.loguj button[type=submit]:hover{
+>>>>>>> 9a2e64cb9c3fb8c22cf0e6b45ae3e855b721f157
     background-color: #c6f9ff;
     transform: scale(110%);
     border-radius: 20px;
