@@ -23,4 +23,8 @@ $(document).ready(function(){
     $("#operacje").click(function(){
         $("#strona").load("operacje.php");
     }); 
+
+    $("#login").click(function(){
+        $("#strona").load("login.php");
+    })
 });

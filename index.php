@@ -13,8 +13,9 @@
      
     <div id="main">
         <div id="logo">
-            <h1>Oto projekt strony z baz danych</h1> <br>
+            <h1>Oto projekt strony z baz danych</h1>
             <h3>MUP 2022/2023</h3>
+            <p id="login">Logowanie</b>
         </div>
         <div id="menu"><b id="home">HOME</b> | <b id="towary">Towary</b> | <b id="klienci">Klienci</b> | <b id="operacje">Operacje</b></div>
         <div id="strona">

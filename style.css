@@ -10,7 +10,7 @@ body{
 }  
 
 #logo{
-    background: url(img/bg.jpeg);
+    background: url(bg.jpg);
     width: 1160px;
     height: 150px;
     padding: 20px;
@@ -31,19 +31,76 @@ body{
     min-height: 400px;
     padding: 10px;
 }
+div p#login{
+    color: white;
+    text-align: right;
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+
+div p#login:hover{
+    cursor: pointer;
+    font-size: 1.5rem;
+}
 
 b:hover{
     background-color: #ff4545;
     cursor: pointer;
 }
 
-table thead{
+table.baza{
+    margin: auto;
+    width: 800px;
+}
+
+table.baza thead{
     background-color: #00e5ff;
     color: #ffffff;
     font-size: 26px;
+    min-height: 10px;
 }
 
-table tr:hover{
+table.baza tr:hover{
     background-color: #9cf5ff;
     color: #000000;
+}
+
+table.baza input[type=text]{
+    width: 100px;
+}
+
+.center{
+    text-align: center;
+}
+
+table.loguj{
+    margin: auto;
+    width: 200px;
+    border: 1px solid black;
+    text-align: center;
+    background-color: #77f1ff
+}
+
+table.loguj td{
+    border: 0px solid black;
+}
+
+table.loguj input[type=text], input[type=password]{
+    background-color: #c6f9ff;
+    border-radius: 10px;
+    height: 20px;
+}
+
+table.loguj input[type=submit]{
+    border-radius: 20px;
+    height: 30px;
+    font-size: 1.1rem;
+}
+
+table.loguj input[type=submit]:hover{
+    background-color: #c6f9ff;
+    transform: scale(110%);
+    border-radius: 20px;
+    height: 30px;
+    font-size: 1.1rem;
 }
