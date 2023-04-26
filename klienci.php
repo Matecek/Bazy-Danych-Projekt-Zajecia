@@ -1,10 +1,10 @@
-<h2>Klienci</h2>
+<h2 class="center">Klienci</h2>
 
-<table border="1">
+<table border="1" class="baza">
     <thead><td>Lp.</td><td>Nazwa</td><td>Ulica</td><td>Numer</td><td>Kod i Miasto</td><td>Operacje</td></thead>
 
     <?php
-
+    
     include 'dbconfig.php';
     $baza = mysqli_connect($server,$user,$pass,$base) or ('coś nie tak z połączniem z BD');
 
@@ -19,10 +19,16 @@
             echo "<td>".$wiersz['nazwa']."</td>";
             echo "<td>".$wiersz['ulica']."</td>";
             echo "<td>". $wiersz['numer']."</td>";
-            echo "<td>".$wiersz['kod pocztowy']." ".$wiersz['miejscowość']."</td>"; 
-            echo "<td>"." E ";
-                
-            echo"<form method='POST' action='delklient.php' id='delklient'>";
+            echo "<td>".$wiersz['kod pocztowy']." ".$wiersz['miejscowość']."</td>";
+            echo "<td>"; 
+//edycja
+            
+            echo "<form method='POST' action='edit_klient.php' id='editKlient'>";
+            echo "<input type='text' value='".$wiersz['id']."' name='f_id' hidden>";
+            echo "<button type='submit'> E </button>";
+            echo "</form>";
+//usuwanie               
+            echo"<form method='POST' action='del_klient.php' id='delKlient'>";
             echo "<input type='text' value='".$wiersz['id']."' name='f_id' hidden>";
             echo "<button type='submit'> X </button>";
             echo "</form>";
@@ -32,28 +38,42 @@
             };
 
     $baza->close();
-?>
-</table>
 
-<hr>
-<h2>Dodaj klienta</h2>
-<form method="POST" action="dodajklienta.php" id="dodajKlienta">
+
+    /*<h2>Dodaj klienta</h2>
+<form method="POST" action="dodaj_klienta.php" id="dodajKlienta">
     Nazwa: <input type="text" name="f_nazwa"><br>
     Ulica: <input type="text" name="f_ulica"><br>
     Numer: <input type="text" name="f_numer"><br>
     Kod Pocztowy: <input type="text" name="f_kod"><br>
     Miejścowość: <input type="text" name="f_miejscowosc"><br><br>
     <button type="submit">Dodaj Klienta</button>
-</form> 
+</form>*/
+?>
+</table>
+
+<hr>
+<h2 class="center">Dodaj klienta</h2>
+<form method="POST" action="dodaj_klienta.php" id="dodajKlienta">
+    <table border="1" class="baza">
+    <thead><td>Nazwa</td><td>Ulica</td><td>Numer</td><td>Kod Pocztowy</td><td>Miejscowość</td><td>Operacje</td></thead>
+    <tr><td><input type="text" name="f_nazwa"></td>
+    <td><input type="text" name="f_ulica"></td>
+    <td><input type="text" name="f_numer"></td>
+    <td><input type="text" name="f_kod"></td>
+    <td><input type="text" name="f_miejscowosc"></td>
+    <td><button type="submit">Dodaj Klienta</button></td></tr>
+</table>
+</form>
 
 <script type="text/javascript">
 //Usuwanie klienta
 $(document).ready(function(){
-    $('#delklient').submit(function(){       
+    $('#delKlient').submit(function(){       
         
-        $.ajax({url: 'delklient.php',
+        $.ajax({url: 'del_klient.php',
             type: 'POST',
-            data: $("#delklient").serialize(),
+            data: $("#delKlient").serialize(),
             cache: false,
             success: function(response) {
                 //alert(response);
@@ -68,7 +88,7 @@ $(document).ready(function(){
 $(document).ready(function(){
     $("#dodajKlienta").submit(function(){
 
-        $.ajax({url: "dodajklienta.php", 
+        $.ajax({url: "dodaj_klienta.php", 
         type: "POST", 
         data: $("#dodajKlienta").serialize(), 
         cache: false, 

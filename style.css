@@ -37,13 +37,58 @@ b:hover{
     cursor: pointer;
 }
 
-table thead{
+table.baza{
+    margin: auto;
+    width: 700px;
+}
+
+table.baza thead{
     background-color: #00e5ff;
     color: #ffffff;
     font-size: 26px;
 }
 
-table tr:hover{
+table.baza tr:hover{
     background-color: #9cf5ff;
     color: #000000;
+}
+
+table.baza input[type=text]{
+    width: 100px;
+}
+
+.center{
+    text-align: center;
+}
+
+table.loguj{
+    margin: auto;
+    width: 200px;
+    border: 1px solid black;
+    text-align: center;
+    background-color: #77f1ff
+}
+
+table.loguj td{
+    border: 0px solid black;
+}
+
+table.loguj input[type=text], input[type=password]{
+    background-color: #c6f9ff;
+    border-radius: 10px;
+    height: 20px;
+}
+
+table.loguj button[type=submit]{
+    border-radius: 20px;
+    height: 30px;
+    font-size: 1.1rem;
+}
+
+table.loguj button[type=submit]:hover{
+    background-color: #c6f9ff;
+    transform: scale(110%);
+    border-radius: 20px;
+    height: 30px;
+    font-size: 1.1rem;
 }
