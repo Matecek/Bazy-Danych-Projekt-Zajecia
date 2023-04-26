@@ -39,13 +39,14 @@ b:hover{
 
 table.baza{
     margin: auto;
-    width: 700px;
+    width: 800px;
 }
 
 table.baza thead{
     background-color: #00e5ff;
     color: #ffffff;
     font-size: 26px;
+    min-height: 10px;
 }
 
 table.baza tr:hover{

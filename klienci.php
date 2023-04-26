@@ -1,3 +1,4 @@
+
 <h2 class="center">Klienci</h2>
 
 <table border="1" class="baza">
@@ -56,7 +57,7 @@
 <h2 class="center">Dodaj klienta</h2>
 <form method="POST" action="dodaj_klienta.php" id="dodajKlienta">
     <table border="1" class="baza">
-    <thead><td>Nazwa</td><td>Ulica</td><td>Numer</td><td>Kod Pocztowy</td><td>Miejscowość</td><td>Operacje</td></thead>
+    <thead><td>Nazwa</td><td>Ulica</td><td>Numer</td><td>Kod Pocztowy</td><td>Miejscowość</td><td>Operacja</td></thead>
     <tr><td><input type="text" name="f_nazwa"></td>
     <td><input type="text" name="f_ulica"></td>
     <td><input type="text" name="f_numer"></td>
