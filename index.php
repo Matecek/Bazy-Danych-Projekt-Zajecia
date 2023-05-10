@@ -9,6 +9,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="style.css">
     <script type="text/javascript" src="jq.min.js"></script>
+    <script>
+        $(document).ready(function(){
+         $('#logout').submit(function(){       
+        
+        $.ajax({url: 'logout.php',
+            type: 'POST',
+            data: $("#logout").serialize(),
+            cache: false,
+            success: function(response) {
+                //alert(response);
+                $("#strona").load("logout.php");
+                location.reload();
+            }
+        }); 
+        return false;
+    });
+});
+    </script>
      
     <title>Projekt</title>  
 </head>
@@ -25,7 +43,7 @@
             if(!isset($_SESSION['user'])){
                 echo "<p id='login'>Logowanie</p>";
             }else{
-                echo "<p id='logout'><a href='logout.php'>Wyloguj</a></p>";
+                echo "<form method='POST' action='logout.php' id='logout'><input type='submit' value='Wyloguj'></form>";
                 }
             ?>
             </div>

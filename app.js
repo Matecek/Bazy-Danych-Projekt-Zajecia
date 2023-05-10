@@ -27,4 +27,9 @@ $(document).ready(function(){
     $("#login").click(function(){
         $("#strona").load("login.php");
     })
+    $("#logout").click(function(){
+        $("#strona").load("home.php");
+    })
+
+
 });

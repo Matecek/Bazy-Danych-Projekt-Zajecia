@@ -13,13 +13,9 @@ while($wiersz = $result->fetch_assoc())
             if($haslo==$wiersz['pass']){
                 session_start();
                 $_SESSION['user']=$wiersz['imie'];
-                echo "jestes zalogowany";
             }
-                };
- 
-        if(!isset($_SESSION['user'])) {
-            echo "Bledne logowanie";      
-            }
+                };     
+            
         $baza->close();
  
 ?>

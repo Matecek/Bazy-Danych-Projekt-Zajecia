@@ -80,7 +80,8 @@ table.loguj{
     width: 200px;
     border: 1px solid black;
     text-align: center;
-    background-color: #77f1ff
+    background-color: #bcf8ff;
+    border-radius: 20px;
 }
 
 table.loguj td{
@@ -88,7 +89,7 @@ table.loguj td{
 }
 
 table.loguj input[type=text], input[type=password]{
-    background-color: #c6f9ff;
+    background-color: #e6fcff;
     border-radius: 10px;
     height: 20px;
 }
@@ -97,6 +98,7 @@ table.loguj input[type=submit]{
     border-radius: 20px;
     height: 30px;
     font-size: 1.1rem;
+    background-color: #e6fcff;
 }
 
 table.loguj input[type=submit]:hover{
