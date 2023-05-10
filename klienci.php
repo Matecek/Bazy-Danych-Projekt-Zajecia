@@ -23,20 +23,23 @@
             echo "<td>".$wiersz['kod pocztowy']." ".$wiersz['miejscowość']."</td>";
             echo "<td>"; 
 //edycja
-            
-            echo "<form method='POST' action='edit_klient.php' id='editKlient'>";
-            echo "<input type='text' value='".$wiersz['id']."' name='f_id' hidden>";
-            echo "<button type='submit'> E </button>";
-            echo "</form>";
-//usuwanie               
-            echo"<form method='POST' action='del_klient.php' id='delKlient'>";
-            echo "<input type='text' value='".$wiersz['id']."' name='f_id' hidden>";
-            echo "<button type='submit'> X </button>";
-            echo "</form>";
+            session_start();
+            if(isset($_SESSION['user'])){
                 
-            echo "</td>";
-            echo "</tr>";
-            };
+                echo "<form method='POST' action='edit_klient.php' id='editKlient'>";
+                echo "<input type='text' value='".$wiersz['id']."' name='f_id' hidden>";
+                echo "<button type='submit'> E </button>";
+                echo "</form>";
+//usuwanie               
+                echo"<form method='POST' action='del_klient.php' id='delKlient'>";
+                echo "<input type='text' value='".$wiersz['id']."' name='f_id' hidden>";
+                echo "<button type='submit'> X </button>";
+                echo "</form>";
+                    
+                echo "</td>";
+                echo "</tr>";
+                }
+            }
 
     $baza->close();
 
@@ -54,18 +57,23 @@
 </table>
 
 <hr>
-<h2 class="center">Dodaj klienta</h2>
-<form method="POST" action="dodaj_klienta.php" id="dodajKlienta">
-    <table border="1" class="baza">
-    <thead><td>Nazwa</td><td>Ulica</td><td>Numer</td><td>Kod Pocztowy</td><td>Miejscowość</td><td>Operacja</td></thead>
-    <tr><td><input type="text" name="f_nazwa"></td>
-    <td><input type="text" name="f_ulica"></td>
-    <td><input type="text" name="f_numer"></td>
-    <td><input type="text" name="f_kod"></td>
-    <td><input type="text" name="f_miejscowosc"></td>
-    <td><button type="submit">Dodaj Klienta</button></td></tr>
-</table>
-</form>
+<?php
+session_start();
+if(isset($_SESSION['user'])){
+echo "<h2 class='center'>Dodaj klienta</h2>";
+echo "<form method='POST' action='dodaj_klienta.php' id='dodajKlienta'>";
+    echo "<table border='1' class='baza'>";
+    echo "<thead><td>Nazwa</td><td>Ulica</td><td>Numer</td><td>Kod Pocztowy</td><td>Miejscowość</td><td>Operacja</td></thead>";
+    echo "<tr><td><input type='text' name='f_nazwa'></td>";
+    echo "<td><input type='text' name='f_ulica'></td>";
+    echo "<td><input type='text' name='f_numer'></td>";
+    echo "<td><input type='text' name='f_kod'></td>";
+    echo "<td><input type='text' name='f_miejscowosc'></td>";
+    echo "<td><button type='submit'>Dodaj Klienta</button></td></tr>";
+echo "</table>";
+echo "</form>";
+}
+?>
 
 <script type="text/javascript">
 //Usuwanie klienta

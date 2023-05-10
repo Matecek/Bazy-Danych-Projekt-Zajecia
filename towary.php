@@ -22,6 +22,8 @@
             echo "<td>".$wiersz['cena']."</td>";
             echo "<td>";
 //Edycja
+            session_start();
+            if(isset($_SESSION['user'])){
             echo "<form method='POST' action='edit_towar.php' id='editTowar'>";
             echo "<input type='text' value='".$wiersz['id']."' name='f_id' hidden>";
             echo "<button type='submit'> E </button>";
@@ -34,6 +36,7 @@
 
             echo "</td>";
             echo "</tr>";
+            }
         }
 
     $baza->close();
@@ -41,18 +44,22 @@
 </table>
 
 <hr>
-<h2 class="center">Dodaj towar</h2>
-<form method="POST" action="dodaj_towar.php" id="dodajTowar">
-    <table border="1" class="baza">
-    <thead><td>Nazwa</td><td>Opis</td><td>Ilość</td><td>Cena</td><td>Operacja</td></thead>
-    <tr><td><input type="text" name="f_nazwaT"></td>
-    <td><input type="text" name="f_opis"></td>
-    <td><input type="text" name="f_ilosc"></td>
-    <td><input type="text" name="f_cena"></td>
-    <td><button type="submit">Dodaj Towar</button></td></tr>
-</table>
-</form>
-
+<?php 
+session_start();
+if(isset($_SESSION['user'])){
+echo "<h2 class='center'>Dodaj towar</h2>";
+echo "<form method='POST' action='dodaj_towar.php' id='dodajTowar'>";
+    echo "<table border='1' class='baza'>";
+    echo "<thead><td>Nazwa</td><td>Opis</td><td>Ilość</td><td>Cena</td><td>Operacja</td></thead>";
+    echo "<tr><td><input type='text' name='f_nazwaT'></td>";
+    echo "<td><input type='text' name='f_opis'></td>";
+    echo "<td><input type='text' name='f_ilosc'></td>";
+    echo "<td><input type='text' name='f_cena'></td>";
+    echo "<td><button type='submit'>Dodaj Towar</button></td></tr>";
+echo "</table>";
+echo "</form>";
+}
+?>
 <script type="text/javascript">
 //Usuwanie klienta
 $(document).ready(function(){

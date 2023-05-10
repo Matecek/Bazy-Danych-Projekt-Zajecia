@@ -1,40 +1,25 @@
 <?php
-    session_start();
-
-    require_once "dbconfig.php";
-
-    $polaczenie = @new mysqli($server, $user, $pass, $base);
-
-    if ($polaczenie->connect_errno!=0){
-        echo "Error: ".$polaczenie->connect_errno;
-    }else{
-        $login=$_POST['login'];
-        $haslo=$_POST['haslo'];
-        
-        $sql = "SELECT * FROM uzytkownicy WHERE user='$login' AND pass='$haslo'";
-
-        if ($result = @$polaczenie->query($sql)){
-            $ilu_userow = $result->num_rows;
-            if($ilu_userow>0){
-                $_SESSION['zalogowany'] = true;
-                $wiersz = $result->fetch_assoc();
-                $_SESSION['id'] = $wiersz['id'];
-                $_SESSION['user'] = $wiersz['user'];
-
-                unset($_SESSION['blad']);
-                $result->close();
-                header('Location: index.php');
-
-            }else{
-                echo "Nieprawidłowy login lub hasło";
+$login=$_POST['f_login'];
+$haslo=SHA1($_POST['f_pass']);
+ 
+include 'dbconfig.php';
+$baza = mysqli_connect($server,$user,$pass,$base) or ('coś nie tak z połączniem z BD');
+ 
+$zapytanie="SELECT * FROM `users` WHERE `login`='$login' LIMIT 1";
+ 
+$result = $baza->query($zapytanie) or die ('bledne zapytanie');
+while($wiersz = $result->fetch_assoc())
+                {
+            if($haslo==$wiersz['pass']){
+                session_start();
+                $_SESSION['user']=$wiersz['imie'];
+                echo "jestes zalogowany";
             }
-            
-        }
-        
-        $polaczenie->close();
-    }
-
-    //echo $login."<br/>";
-    //echo $haslo;
-    
+                };
+ 
+        if(!isset($_SESSION['user'])) {
+            echo "Bledne logowanie";      
+            }
+        $baza->close();
+ 
 ?>
