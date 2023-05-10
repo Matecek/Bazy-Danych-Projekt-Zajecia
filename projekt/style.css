@@ -1,0 +1,108 @@
+body{
+    font-family: calibri, Arial, Tahoma;
+    color: #222222;
+}
+ 
+#main{
+    width: 1200px;
+    min-height: 800px;
+    margin: auto;
+}  
+
+#logo{
+    background: url(img/bg.jpeg);
+    width: 1160px;
+    height: 150px;
+    padding: 20px;
+    color: #000000;
+}
+
+#menu{
+    background-color: #ff0000;
+    color: #ffffff;
+    font-size: 28px;
+    width: 1200px;
+    height: 34px;
+}
+
+#strona{
+    border: 1px solid #cdcdcd;
+    width: 1178px;
+    min-height: 400px;
+    padding: 10px;
+}
+
+#login, #logout, a {
+    color: black;
+    text-align: right;
+    font-size: 1.4rem;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+#login, a, #logout:hover{
+    cursor: pointer;
+    text-decoration: none;
+}
+
+b:hover{
+    background-color: #ff4545;
+    cursor: pointer;
+}
+
+table.baza{
+    margin: auto;
+    width: 800px;
+}
+
+table.baza thead{
+    background-color: #00e5ff;
+    color: #ffffff;
+    font-size: 26px;
+    min-height: 10px;
+}
+
+table.baza tr:hover{
+    background-color: #9cf5ff;
+    color: #000000;
+}
+
+table.baza input[type=text]{
+    width: 100px;
+}
+
+.center{
+    text-align: center;
+}
+
+table.loguj{
+    margin: auto;
+    width: 200px;
+    border: 1px solid black;
+    text-align: center;
+    background-color: #77f1ff
+}
+
+table.loguj td{
+    border: 0px solid black;
+}
+
+table.loguj input[type=text], input[type=password]{
+    background-color: #c6f9ff;
+    border-radius: 10px;
+    height: 20px;
+}
+
+table.loguj input[type=submit]{
+    border-radius: 20px;
+    height: 30px;
+    font-size: 1.1rem;
+}
+
+table.loguj input[type=submit]:hover{
+    background-color: #c6f9ff;
+    transform: scale(110%);
+    border-radius: 20px;
+    height: 30px;
+    font-size: 1.1rem;
+}
