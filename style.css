@@ -18,7 +18,7 @@ body{
 }
 
 #menu{
-    background-color: #ff0000;
+    background-color: #00e5ff;
     color: #ffffff;
     font-size: 28px;
     width: 1200px;
@@ -46,7 +46,7 @@ body{
 }
 
 b:hover{
-    background-color: #ff4545;
+    background-color: #3decff;
     cursor: pointer;
 }
 

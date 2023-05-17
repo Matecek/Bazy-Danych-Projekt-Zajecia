@@ -4,10 +4,10 @@
 
     <section>
         <h2>Klient</h2>
-        <select name="f_idKlient">
+        <select name="f_idk">
             
         <?php
-        
+            session_start();
             include 'dbconfig.php';
             $baza = mysqli_connect($server,$user,$pass,$base) or ('coś nie tak z połączniem z BD');
         
@@ -30,10 +30,31 @@
 
     <section>
         <h2>Towar</h2>
-        <select name="f_idTowar">
-            <option value="3">T1</option>
+        <select name="f_idt">
+            
+        <?php
+        
+            $baza = mysqli_connect($server,$user,$pass,$base) or ('coś nie tak z połączniem z BD');
+        
+            $zapytanie="SELECT * FROM towary ORDER BY nazwa ASC";
+            $result = $baza->query($zapytanie) or die ('bledne zapytanie');
+                while($wiersz = $result->fetch_assoc())
+                    {
+        
+                    echo "<option value='".$wiersz['id']."'>".$wiersz['nazwa']."</option>\n";
+                    
+                    if(isset($_SESSION['user'])){
+                        
+                        }
+                    }
+        
+            $baza->close();
+        ?> 
         </select>
     </section>
+    <?php
+    //<input type="date">
+    ?>
 <br>
     <button type="submit">Dodaj Operacje</button>
 
