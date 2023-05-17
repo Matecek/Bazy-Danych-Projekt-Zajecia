@@ -43,14 +43,13 @@
             if(!isset($_SESSION['user'])){
                 echo "<p id='login'>Logowanie</p>";
             }else{
-                echo "<form method='POST' action='logout.php' id='logout'><input type='submit' value='Wyloguj'></form>";
+                echo "Witaj ".$_SESSION['user']." <form method='POST' action='logout.php' id='logout'><input type='submit' value='Wyloguj'></form>";
                 }
             ?>
             </div>
         </div>
         <div id="menu"><b id="home">HOME</b> | <b id="towary">Towary</b> | <b id="klienci">Klienci</b> | <b id="operacje">Operacje</b></div>
         <div id="strona">
-            <?php echo "Witaj ".$_SESSION['user']." ";?>
             <h2>Serwis sklepu internetowego "Od A do Z"</h2>
         </div>
     </div>

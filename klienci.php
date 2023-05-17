@@ -4,8 +4,9 @@
 <table border="1" class="baza">
     <thead><td>Lp.</td><td>Nazwa</td><td>Ulica</td><td>Numer</td><td>Kod i Miasto</td><td>Operacje</td></thead>
 
-    <?php
-    
+<?php
+
+    session_start();
     include 'dbconfig.php';
     $baza = mysqli_connect($server,$user,$pass,$base) or ('coś nie tak z połączniem z BD');
 
@@ -23,9 +24,7 @@
             echo "<td>".$wiersz['kod pocztowy']." ".$wiersz['miejscowość']."</td>";
             echo "<td>"; 
 //edycja
-            session_start();
-            if(isset($_SESSION['user'])){
-                
+            if(isset($_SESSION['user'])){    
                 echo "<form method='POST' action='edit_klient.php' id='editKlient'>";
                 echo "<input type='text' value='".$wiersz['id']."' name='f_id' hidden>";
                 echo "<button type='submit'> E </button>";
@@ -42,24 +41,13 @@
             }
 
     $baza->close();
-
-
-    /*<h2>Dodaj klienta</h2>
-<form method="POST" action="dodaj_klienta.php" id="dodajKlienta">
-    Nazwa: <input type="text" name="f_nazwa"><br>
-    Ulica: <input type="text" name="f_ulica"><br>
-    Numer: <input type="text" name="f_numer"><br>
-    Kod Pocztowy: <input type="text" name="f_kod"><br>
-    Miejścowość: <input type="text" name="f_miejscowosc"><br><br>
-    <button type="submit">Dodaj Klienta</button>
-</form>*/
 ?>
 </table>
 
-<hr>
 <?php
 session_start();
 if(isset($_SESSION['user'])){
+echo "<hr>";
 echo "<h2 class='center'>Dodaj klienta</h2>";
 echo "<form method='POST' action='dodaj_klienta.php' id='dodajKlienta'>";
     echo "<table border='1' class='baza'>";

@@ -3,8 +3,9 @@
 <table border="1" class="baza">
     <thead><td>Lp.</td><td>Nazwa</td><td>Opis</td><td>Ilość</td><td>Cena</td><td>Operacje</td></thead>
 
-    <?php
+<?php
 
+    session_start();
     include 'dbconfig.php';
 
     $baza = mysqli_connect($server,$user,$pass,$base) or ('cos nie tak z połączeniem z BD');
@@ -22,20 +23,19 @@
             echo "<td>".$wiersz['cena']."</td>";
             echo "<td>";
 //Edycja
-            session_start();
             if(isset($_SESSION['user'])){
-            echo "<form method='POST' action='edit_towar.php' id='editTowar'>";
-            echo "<input type='text' value='".$wiersz['id']."' name='f_id' hidden>";
-            echo "<button type='submit'> E </button>";
-            echo "</form>";
+                echo "<form method='POST' action='edit_towar.php' id='editTowar'>";
+                echo "<input type='text' value='".$wiersz['id']."' name='f_id' hidden>";
+                echo "<button type='submit'> E </button>";
+                echo "</form>";
 //Usuwanie
-            echo"<form method='POST' action='del_towar.php' id='delTowar'>";
-            echo "<input type='text' value='".$wiersz['id']."' name='f_id' hidden>";
-            echo "<button type='submit'> X </button>";
-            echo "</form>";
+                echo"<form method='POST' action='del_towar.php' id='delTowar'>";
+                echo "<input type='text' value='".$wiersz['id']."' name='f_id' hidden>";
+                echo "<button type='submit'> X </button>";
+                echo "</form>";
 
-            echo "</td>";
-            echo "</tr>";
+                echo "</td>";
+                echo "</tr>";
             }
         }
 
@@ -43,10 +43,10 @@
     ?>
 </table>
 
-<hr>
 <?php 
 session_start();
 if(isset($_SESSION['user'])){
+echo "<hr>";
 echo "<h2 class='center'>Dodaj towar</h2>";
 echo "<form method='POST' action='dodaj_towar.php' id='dodajTowar'>";
     echo "<table border='1' class='baza'>";
