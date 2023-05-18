@@ -44,7 +44,6 @@
 </table>
 
 <?php 
-session_start();
 if(isset($_SESSION['user'])){
 echo "<hr>";
 echo "<h2 class='center'>Dodaj towar</h2>";

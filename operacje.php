@@ -1,6 +1,6 @@
 <h2>Operacje</h2> 
 
-<form method="POST" action="dodaj_operacje.php">
+<form method="POST" action="dodaj_operacje.php" id="dodajOperacje">
 
     <section>
         <h2>Klient</h2>
@@ -57,5 +57,22 @@
     ?>
 <br>
     <button type="submit">Dodaj Operacje</button>
-
 </form>
+<script>
+$(document).ready(function(){
+    $("#dodajOperacje").submit(function(){
+
+        $.ajax({url: "dodaj_operacje.php", 
+        type: "POST", 
+        data: $("#dodajOperacje").serialize(), 
+        cache: false, 
+        success: function(response) {
+            //$("#lista").append(response);
+            $("#strona").load("operacje.php");
+        }
+        
+        })  
+       return false;
+    })
+});
+</script>

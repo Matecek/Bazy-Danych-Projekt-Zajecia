@@ -8,7 +8,8 @@
 
     session_start();
     include 'dbconfig.php';
-    $baza = mysqli_connect($server,$user,$pass,$base) or ('coś nie tak z połączniem z BD');
+
+    $baza = mysqli_connect($server,$user,$pass,$base) or ('cos nie tak z połączeniem z BD');
 
     $zapytanie="SELECT * FROM klienci ORDER BY nazwa ASC";
     $result = $baza->query($zapytanie) or die ('bledne zapytanie');
@@ -45,7 +46,6 @@
 </table>
 
 <?php
-session_start();
 if(isset($_SESSION['user'])){
 echo "<hr>";
 echo "<h2 class='center'>Dodaj klienta</h2>";

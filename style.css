@@ -18,7 +18,7 @@ body{
 }
 
 #menu{
-    background-color: #00e5ff;
+    background-color: #feb9bf;
     color: #ffffff;
     font-size: 28px;
     width: 1200px;
@@ -46,7 +46,7 @@ body{
 }
 
 b:hover{
-    background-color: #3decff;
+    background-color: #f9c7cb;
     cursor: pointer;
 }
 
@@ -80,8 +80,9 @@ table.loguj{
     width: 200px;
     border: 1px solid black;
     text-align: center;
-    background-color: #bcf8ff;
+    background-color: #feb9bf;
     border-radius: 20px;
+    box-shadow: 0px 8px 24px 0 rgba(0,0,0,0.3);
 }
 
 table.loguj td{
@@ -92,6 +93,7 @@ table.loguj input[type=text], input[type=password]{
     background-color: #e6fcff;
     border-radius: 10px;
     height: 20px;
+    box-shadow: 0px 8px 24px 0 rgba(0,0,0,0.3);
 }
 
 table.loguj input[type=submit]{
@@ -99,6 +101,7 @@ table.loguj input[type=submit]{
     height: 30px;
     font-size: 1.1rem;
     background-color: #e6fcff;
+    box-shadow: 0px 8px 24px 0 rgba(0,0,0,0.3);
 }
 
 table.loguj input[type=submit]:hover{
@@ -107,4 +110,5 @@ table.loguj input[type=submit]:hover{
     border-radius: 20px;
     height: 30px;
     font-size: 1.1rem;
+    box-shadow: 0px 8px 24px 0 rgba(0,0,0,0.3);
 }
