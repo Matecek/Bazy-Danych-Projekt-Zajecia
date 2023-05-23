@@ -1,5 +1,6 @@
-<h2>Operacje</h2> 
-
+<h2 class="center">Operacje</h2> 
+<div class="container">
+<div id="operacje-left">
 <form method="POST" action="dodaj_operacje.php" id="dodajOperacje">
 
     <section>
@@ -58,7 +59,37 @@
 <br>
     <button type="submit">Dodaj Operacje</button>
 </form>
-<script>
+</div>
+<div id="operacje-right">
+
+<table border="1">
+    <thead><td>Lp.</td><td>idKlient</td><td>idTowar</td><td>Data</td></thead>
+
+<?php
+
+    $baza = mysqli_connect($server,$user,$pass,$base) or ('cos nie tak z połączeniem z BD');
+
+    $zapytanie="SELECT * FROM operacje ORDER BY id ASC";
+    $result = $baza->query($zapytanie) or die ('bledne zapytanie');
+    $n=0;
+        while($wiersz = $result->fetch_assoc())
+            {
+            $n++;			
+            echo "<tr>";
+            echo "<td>".$n."</td>";
+            echo "<td>".$wiersz['idKlient']."</td>";
+            echo "<td>".$wiersz['idTowar']."</td>";
+            echo "<td>". $wiersz['data']."</td>";
+            echo "</tr>";
+            }
+
+    $baza->close();
+?>
+</table>
+</div>
+</div>
+<script type="text/javascript">
+//dodawanie operacji
 $(document).ready(function(){
     $("#dodajOperacje").submit(function(){
 
@@ -75,4 +106,5 @@ $(document).ready(function(){
        return false;
     })
 });
+
 </script>
