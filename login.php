@@ -3,10 +3,11 @@
 <form method="POST" action="zaloguj.php" id="zaloguj">
 <table border="1" class="loguj">
         <tr><td>Nazwa użytkownika<td></tr>
-        <tr><td><input type="text" name="f_login"></td></tr>
+        <tr><td><input type="text" name="f_login" id="lLogin"></td></tr>
         <tr><td>Hasło</td></tr>
         <tr><td><input type="password" name="f_pass"></td></tr>
-        <tr><td><input type="submit" value="Zaloguj"></td></tr>
+        <tr><td><input type="submit" value="Zaloguj" id="lHaslo"></td></tr>
+        <tr><td><b id="register">Nie posiadasz konta? Zarejestruj się</b></td></tr>
     </table>
 </form>
 <script>
@@ -26,4 +27,9 @@ $(document).ready(function(){
         return false;
     });
 });
+
+$("#register").click(function(){
+        $("#strona").load("register.php");
+    })
+
 </script>

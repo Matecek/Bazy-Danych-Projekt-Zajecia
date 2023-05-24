@@ -10,6 +10,7 @@
         <?php
             session_start();
             include 'dbconfig.php';
+            $lp=1;
             $baza = mysqli_connect($server,$user,$pass,$base) or ('coś nie tak z połączniem z BD');
         
             $zapytanie="SELECT * FROM klienci ORDER BY nazwa ASC";
@@ -17,7 +18,8 @@
                 while($wiersz = $result->fetch_assoc())
                     {
         
-                    echo "<option value='".$wiersz['id']."'>".$wiersz['nazwa']."</option>\n";
+                    echo "<option value='".$wiersz['id']."'>".$lp.". ".$wiersz['nazwa']."</option>\n";
+                    $lp=$lp+1;
                     
                     if(isset($_SESSION['user'])){
                         
@@ -36,13 +38,16 @@
         <?php
         
             $baza = mysqli_connect($server,$user,$pass,$base) or ('coś nie tak z połączniem z BD');
+
+            $lp=1;
         
             $zapytanie="SELECT * FROM towary ORDER BY nazwa ASC";
             $result = $baza->query($zapytanie) or die ('bledne zapytanie');
                 while($wiersz = $result->fetch_assoc())
                     {
         
-                    echo "<option value='".$wiersz['id']."'>".$wiersz['nazwa']."</option>\n";
+                    echo "<option value='".$wiersz['id']."'>".$lp.".  ".$wiersz['nazwa']."</option>\n";
+                    $lp=$lp+1;
                     
                     if(isset($_SESSION['user'])){
                         
@@ -69,7 +74,7 @@
 
     $baza = mysqli_connect($server,$user,$pass,$base) or ('cos nie tak z połączeniem z BD');
 
-    $zapytanie="SELECT * FROM operacje ORDER BY id ASC";
+    $zapytanie="SELECT * FROM operacje ORDER BY data ASC";
     $result = $baza->query($zapytanie) or die ('bledne zapytanie');
     $n=0;
         while($wiersz = $result->fetch_assoc())

@@ -4,32 +4,39 @@ body{
 }
  
 #main{
-    width: 1200px;
+    width: 75rem;;
     min-height: 800px;
     margin: auto;
 }  
 
-#logo{
+#logo {
     background: url(img/bg.jpeg);
-    width: 1160px;
+    width: 72.5rem;
     height: 150px;
-    padding: 20px;
+    padding: 1.25rem;
     color: #000000;
+    display: flex;
+}
+
+#text-logo {
+    justify-content: start;
+    width: 68.75rem;
+    flex-wrap: wrap;
 }
 
 #menu{
     background-color: #feb9bf;
     color: #ffffff;
-    font-size: 28px;
-    width: 1200px;
+    font-size: 1.75rem;
+    width: 75rem;
     height: 34px;
 }
 
 #strona{
     border: 1px solid #cdcdcd;
-    width: 1178px;
+    width: 73.625rem;
     min-height: 400px;
-    padding: 10px;
+    padding: 0.625rem;
 }
 
 #login, #logout, a {
@@ -38,6 +45,7 @@ body{
     font-size: 1.4rem;
     font-weight: 500;
     text-decoration: none;
+    height: 20px;
 }
 
 #login, a, #logout:hover{
@@ -52,23 +60,23 @@ b:hover{
 
 table.baza{
     margin: auto;
-    width: 800px;
+    width: 50rem;
 }
 
 table.baza thead{
-    background-color: #00e5ff;
+    background-color: #feb9bf;
     color: #ffffff;
-    font-size: 26px;
+    font-size: 1.625rem;
     min-height: 10px;
 }
 
 table.baza tr:hover{
-    background-color: #9cf5ff;
+    background-color: #f9c7cb;
     color: #000000;
 }
 
 table.baza input[type=text]{
-    width: 100px;
+    width: 6.25rem;
 }
 
 .center{
@@ -77,7 +85,7 @@ table.baza input[type=text]{
 
 table.loguj{
     margin: auto;
-    width: 200px;
+    width: 12.5rem;
     border: 1px solid black;
     text-align: center;
     background-color: #feb9bf;
@@ -120,27 +128,31 @@ table.loguj input[type=submit]:hover{
 #operacje-left {
     justify-content: start;
     flex-wrap: wrap;
-    width: 300px;
-    margin-left: 50px;
+    width: 18.75rem;
+    margin-left: 3.125rem;
 }
 
 #operacje-right {
     align-self: center;
-    margin-left: 100px;
+    margin-left: 6.25rem;
 }
 
 #operacje-right table{
-    width: 300px;
+    width: 18.75rem;
     margin: auto;
 }
 
 #operacje-right table thead {
-    background-color: #00e5ff;
+    background-color: #feb9bf;
     color: #ffffff;
     font-size: 1.4rem;
 }
 
 #operacje-right table tr:hover{
-    background-color: #9cf5ff;
+    background-color: #f9c7cb;
     color: #000000;
+}
+
+#register {
+    font-size: 0.9rem;
 }
