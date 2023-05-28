@@ -1,16 +1,16 @@
 <?php
 
 $id=$_POST['f_id'];
-$nazwa=$_POST['f_nazwa'];
+$imie=$_POST['f_imie'];
+$nazwisko=$_POST['f_nazwisko'];
+$miejscowosc=$_POST['f_miejscowosc'];
 $ulica=$_POST['f_ulica'];
 $numer=$_POST['f_numer'];
-$kod=$_POST['f_kod'];
-$miejscowojsc=$_POST['f_miejscowosc'];
  
 include 'dbconfig.php';
 
     $baza = mysqli_connect($server,$user,$pass,$base) or ('cos nie tak z połączeniem z BD');
-    $zapytanie = "UPDATE `klienci` SET `nazwa` = '$nazwa', `ulica` = '$ulica', `numer` = '$numer', `kod pocztowy` = '$kod', `miejscowość` = '$miejscowojsc' WHERE `klienci`.`id` = '$id'";
+    $zapytanie = "UPDATE `klienci1` SET `imie` = '$imie', `nazwisko` = '$nazwisko', `miejscowosc` = '$miejscowosc', `ulica` = '$ulica', `numer` = '$numer' WHERE `klienci1`.`id` = '$id'";
     $result = $baza->query($zapytanie) or die ('bledne zapytanie');
     $baza->close();
 ?>

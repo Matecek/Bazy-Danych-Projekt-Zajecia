@@ -1,17 +1,31 @@
-<h2 class="center">Zarejestruj się</h2>
-
-<form method="POST" action="add_user.php" id="addUser">
-<table border="1" class="loguj">
-        <tr><td>Nazwa użytkownika<td></tr>
-        <tr><td><input type="text" name="f_login"></td></tr>
-        <tr><td>Hasło</td></tr>
-        <tr><td><input type="password" name="f_pass"></td></tr>
-        <tr><td>Imie</td></tr>
-        <tr><td><input type="text" name="f_name"></td></tr>
-        <tr><td><input type="submit" value="Utwórz konto"></td></tr>
+    <div class="slider-box clearfix">
+        <div class="slider-half-item">
+          <article>
+            Projekt pizzerii
+          </article>
+        </div>
+        <div class="slider-half-item pizza-img">
+          &nbsp;
+        </div>
+    </div>
+      
+    <div class="advantages-box clearfix">
         
-    </table>
-</form>
+    <h2 class="center">Zarejestruj się</h2>
+
+    <form method="POST" action="add_user.php" id="addUser">
+    <table border="1" class="loguj">
+            <tr><td>Nazwa użytkownika<td></tr>
+            <tr><td><input type="text" name="f_login"></td></tr>
+            <tr><td>Hasło</td></tr>
+            <tr><td><input type="password" name="f_pass"></td></tr>
+            <tr><td>Imie</td></tr>
+            <tr><td><input type="text" name="f_name"></td></tr>
+            <tr><td><input type="submit" value="Utwórz konto"></td></tr>
+            
+        </table>
+    </form>
+</div>
 <script>
 $(document).ready(function(){
     $('#addUser').submit(function(){       
@@ -22,7 +36,7 @@ $(document).ready(function(){
             cache: false,
             success: function(response) {
                 //alert(response);
-                $("#strona").load("home.php");
+                $("main").load("home.php");
                 location.reload();
             }
         }); 

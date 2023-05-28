@@ -9,29 +9,26 @@ function strona_home(){
 
 $(document).ready(function(){
     $("#home").click(function(){
-        $("main").load("home.php");
+        $("#strona").load("home.php");
     });
 
-    $("#menu-pizza").click(function(){
-        $("main").load("menu.php");
+    $("#towary").click(function(){
+        $("#strona").load("towary.php");
     });
 
-    $("#users").click(function(){
-        $("main").load("klienci.php");
+    $("#klienci").click(function(){
+        $("#strona").load("klienci.php");
     });
 
-    $("#orders").click(function(){
-        $("main").load("orders.php");
+    $("#operacje").click(function(){
+        $("#strona").load("operacje.php");
     }); 
 
     $("#login").click(function(){
-        $("main").load("login.php");
+        $("#strona").load("login.php");
     })
 
     $("#logout").click(function(){
-        $("main").load("home.php");
+        $("#strona").load("home.php");
     })
-
-
-
 });

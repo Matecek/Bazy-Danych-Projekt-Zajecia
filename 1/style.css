@@ -1,0 +1,158 @@
+body{
+    font-family: calibri, Arial, Tahoma;
+    color: #222222;
+}
+ 
+#main{
+    width: 75rem;;
+    min-height: 800px;
+    margin: auto;
+}  
+
+#logo {
+    background: url(img/bg.jpeg);
+    width: 72.5rem;
+    height: 150px;
+    padding: 1.25rem;
+    color: #000000;
+    display: flex;
+}
+
+#text-logo {
+    justify-content: start;
+    width: 68.75rem;
+    flex-wrap: wrap;
+}
+
+#menu{
+    background-color: #feb9bf;
+    color: #ffffff;
+    font-size: 1.75rem;
+    width: 75rem;
+    height: 34px;
+}
+
+#strona{
+    border: 1px solid #cdcdcd;
+    width: 73.625rem;
+    min-height: 400px;
+    padding: 0.625rem;
+}
+
+#login, #logout, a {
+    color: black;
+    text-align: right;
+    font-size: 1.4rem;
+    font-weight: 500;
+    text-decoration: none;
+    height: 20px;
+}
+
+#login, a, #logout:hover{
+    cursor: pointer;
+    text-decoration: none;
+}
+
+b:hover{
+    background-color: #f9c7cb;
+    cursor: pointer;
+}
+
+table.baza{
+    margin: auto;
+    width: 50rem;
+}
+
+table.baza thead{
+    background-color: #feb9bf;
+    color: #ffffff;
+    font-size: 1.625rem;
+    min-height: 10px;
+}
+
+table.baza tr:hover{
+    background-color: #f9c7cb;
+    color: #000000;
+}
+
+table.baza input[type=text]{
+    width: 6.25rem;
+}
+
+.center{
+    text-align: center;
+}
+
+table.loguj{
+    margin: auto;
+    width: 12.5rem;
+    border: 1px solid black;
+    text-align: center;
+    background-color: #feb9bf;
+    border-radius: 20px;
+    box-shadow: 0px 8px 24px 0 rgba(0,0,0,0.3);
+}
+
+table.loguj td{
+    border: 0px solid black;
+}
+
+table.loguj input[type=text], input[type=password]{
+    background-color: #e6fcff;
+    border-radius: 10px;
+    height: 20px;
+    box-shadow: 0px 8px 24px 0 rgba(0,0,0,0.3);
+}
+
+table.loguj input[type=submit]{
+    border-radius: 20px;
+    height: 30px;
+    font-size: 1.1rem;
+    background-color: #e6fcff;
+    box-shadow: 0px 8px 24px 0 rgba(0,0,0,0.3);
+}
+
+table.loguj input[type=submit]:hover{
+    background-color: #c6f9ff;
+    transform: scale(110%);
+    border-radius: 20px;
+    height: 30px;
+    font-size: 1.1rem;
+    box-shadow: 0px 8px 24px 0 rgba(0,0,0,0.3);
+}
+
+.container {
+    display: flex;
+}
+
+#operacje-left {
+    justify-content: start;
+    flex-wrap: wrap;
+    width: 18.75rem;
+    margin-left: 3.125rem;
+}
+
+#operacje-right {
+    align-self: center;
+    margin-left: 6.25rem;
+}
+
+#operacje-right table{
+    width: 18.75rem;
+    margin: auto;
+}
+
+#operacje-right table thead {
+    background-color: #feb9bf;
+    color: #ffffff;
+    font-size: 1.4rem;
+}
+
+#operacje-right table tr:hover{
+    background-color: #f9c7cb;
+    color: #000000;
+}
+
+#register {
+    font-size: 0.9rem;
+}

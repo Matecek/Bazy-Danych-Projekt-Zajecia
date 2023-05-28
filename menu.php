@@ -10,7 +10,7 @@
     </div>
 
     <div class="advantages-box clearfix">
-        <h2 class="center">Menu</h2>
+        <h2>Menu</h2>
 
         <table border="1" class="baza">
             <thead><td>Lp.</td><td>Nazwa</td><td>Opis</td><td>Wielkośc</td><td>Cena</td><td>Operacje</td></thead>
@@ -38,7 +38,7 @@
                     if(isset($_SESSION['user'])){
                         echo "<form method='POST' action='edit_menu.php' id='editMenu'>";
                         echo "<input type='text' value='".$wiersz['id']."' name='f_id' hidden>";
-                        echo "<button type='submit'> E </button>";
+                        echo "<button type='submit' id='edit'> E </button>";
                         echo "</form>";
         //Usuwanie
                         echo"<form method='POST' action='del_menu.php' id='delMenu'>";
@@ -58,7 +58,7 @@
         <?php 
             if(isset($_SESSION['user'])){
             echo "<hr>";
-            echo "<h2 class='center'>Dodaj towar</h2>";
+            echo "<h2>Dodaj Danie</h2>";
             echo "<form method='POST' action='dodaj_menu.php' id='dodajMenu'>";
                 echo "<table border='1' class='baza'>";
                 echo "<thead><td>Nazwa</td><td>Opis</td><td>Wielkość</td><td>Cena</td><td>Operacja</td></thead>";
@@ -73,12 +73,12 @@
         ?>
     </div>
 <script type="text/javascript">
-//Usuwanie klienta
+//Usuwanie dania
 $(document).ready(function(){
     $('#delMenu').submit(function(){        
     $.ajax({url: 'del_menu.php',
             type: 'POST',
-            data: $("#delManu").serialize(),
+            data: $("#delMenu").serialize(),
             cache: false,
             success: function(response) {
                 //alert(response);
@@ -89,7 +89,7 @@ $(document).ready(function(){
     });
 });
 
-//Dodawanie klienta
+//Dodawanie dania
 $(document).ready(function(){
     $("#dodajMenu").submit(function(){
 
@@ -100,10 +100,10 @@ $(document).ready(function(){
         success: function(response) {
             //$("#lista").append(response);
             $("main").load("menu.php");
-        }
-        
+        }     
         })  
        return false;
     })
 });
+
 </script>
