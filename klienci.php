@@ -1,3 +1,4 @@
+<!-- górny div -->
 <div class="slider-box clearfix">
         <div class="slider-half-item">
           <article>
@@ -9,6 +10,7 @@
         </div>
     </div>
 
+<!-- główny div -->
     <div class="advantages-box clearfix">
         <h2>Klienci</h2>
 
@@ -16,7 +18,7 @@
             <thead><td>Lp.</td><td>Imię</td><td>Nazwisko</td><td>Miejscowość</td><td>Ulica</td><td>Numer</td><td>Operacje</td></thead>
 
         <?php
-
+        // połączenie z baza danych i wypisanie wszystkich danych z tabeli klienci
             session_start();
             include 'dbconfig.php';
 
@@ -36,28 +38,26 @@
                     echo "<td>".$wiersz['numer']."</td>";
                     echo "<td>";
         //Edycja
-                    if(isset($_SESSION['user'])){
-                        echo "<form method='POST' action='edit_klient.php' id='editKlient'>";
-                        echo "<input type='text' value='".$wiersz['id']."' name='f_id' hidden>";
-                        echo "<button type='submit'> E </button>";
-                        echo "</form>";
+                    echo "<form method='POST' action='edit_klient.php' id='editKlient'>";
+                    echo "<input type='text' value='".$wiersz['id']."' name='f_id' hidden>";
+                    echo "<button type='submit'> E </button>";
+                    echo "</form>";
         //Usuwanie
-                        echo"<form method='POST' action='del_klient.php' id='delKlient'>";
-                        echo "<input type='text' value='".$wiersz['id']."' name='f_id' hidden>";
-                        echo "<button type='submit'> X </button>";
-                        echo "</form>";
+                    echo"<form method='POST' action='del_klient.php' id='delKlient'>";
+                    echo "<input type='text' value='".$wiersz['id']."' name='f_id' hidden>";
+                    echo "<button type='submit'> X </button>";
+                    echo "</form>";
 
-                        echo "</td>";
-                        echo "</tr>";
-                    }
+                    echo "</td>";
+                    echo "</tr>";
                 }
-
+            
             $baza->close();
             ?>
         </table>
 
         <?php 
-            if(isset($_SESSION['user'])){
+        // tabela z możliwościa dodania klienta
             echo "<hr>";
             echo "<h2>Dodaj Klienta</h2>";
             echo "<form method='POST' action='dodaj_klienta.php' id='dodajKlienta'>";
@@ -71,7 +71,7 @@
                 echo "<td><button type='submit'>Dodaj Klienta</button></td></tr>";
             echo "</table>";
             echo "</form>";
-            }
+            
         ?>
     </div>
 <script type="text/javascript">
@@ -108,7 +108,4 @@ $(document).ready(function(){
     })
 });
 
-$("#editMenu").click(function(){
-        $("main").load("edit_klient.php");
-    })
 </script>

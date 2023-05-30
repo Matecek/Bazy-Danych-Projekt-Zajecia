@@ -6,7 +6,9 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
     <script type="text/javascript" src="jq.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <script>
+// wylogowywanie sie
       $(document).ready(function(){
          $('#logout').submit(function(){       
         
@@ -27,21 +29,32 @@
     <title>Pizzeria</title>
 </head>
 <body>
+<!-- nawigacja, menu -->
     <header id="header" class="clearfix">
       <div id="logo">
         <img width="60" src="https://cdn.pixabay.com/photo/2012/04/01/16/51/pizza-23477_960_720.png" alt="">
       </div>
-      <nav class="menu">
-        <ul>
-          <li><b id="home">Strona główna</b></li>
-          <li><b id="menu-pizza">Menu</b></li>
-          <?php session_start();
-          if(isset($_SESSION['user'])) {
-            echo "<li><b id='users'>Klient</b></li>";
-          };
-          ?>
-          <li><b id="orders">Zamówienia</b></li>
-        </ul>
+      <nav class="navbar">
+        <input type="checkbox" id="toggler">
+        <label for="toggler"><i class="bi bi-list"></i></label>
+        <div class="menu">
+          <ul class="list">
+            <li><b id="home">Strona główna</b></li>
+            <li><b id="menu-pizza">Menu</b></li>
+            <li><b id="about-us">O nas</b></li>
+            <?php session_start();                      // włączenie sesji, aby przed zalogowaniem nie była widoczna podstrona "Klienci"
+            if(isset($_SESSION['user'])) {
+              echo "<li><b id='users'>Klienci</b></li>";
+            };
+            ?>
+            <?php                      // ustawienie sesji, aby przed zalogowaniem nie była widoczna podstrona "Zamówienia"
+            if(isset($_SESSION['user'])) {
+              echo "<li><b id='orders'>Zamównienia</b></li>";
+            };
+            ?>
+          </ul>
+        </div>
+        
       </nav>
       <div class="login-panel">
         <div class="login-button"><?php
@@ -51,10 +64,13 @@
             }else{
                 echo "Witaj ".$_SESSION['user']." <form method='POST' action='logout.php' id='logout'><input type='submit' value='Wyloguj' id='logout'></form>";
                 }
-            ?></div>
+            ?>
+        </div>
       </div>
+      
     </header>
     <main>
+<!-- górny div  -->
       <div class="slider-box clearfix">
         <div class="slider-half-item">
           <article>
@@ -65,10 +81,11 @@
           &nbsp;
         </div>
       </div>
-    <?php
+        <?php                                                               // sesja z informacja o błędnym logowaniu
                if(isset($_SESSION['error']))
                echo "<p id='login-faild'>".$_SESSION['error']."</p>";
         ?> 
+<!-- głowny div -->        
       <div class="advantages-box clearfix">
         <div class="advantages-one-third">
           <div class="column-advantage best-ingredients">
@@ -87,7 +104,8 @@
         </div>
       </div>  
     </main>
-    <footer class="page-footer menu">
+<!-- stopka strony -->
+    <footer class="page-footer navbar">
       <p id="copy">Author: Mateusz Wojtas © Copyright 2023. All Rights Reserved.</p>
     </footer>
         

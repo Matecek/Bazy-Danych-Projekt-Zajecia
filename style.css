@@ -31,26 +31,63 @@ body::-webkit-scrollbar-thumb{
     width: 60px;
     margin-left: 10px;
 }
-.menu{
+.navbar{
     float: left;
-    width: 75%;
+    width: 65%;
     text-align: center;
+    margin-right: 10%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
 }
-.menu ul li{
-    display: inline-block;
-    padding-right: 20px;
-}
-.menu ul li b{
-    color: white;
+.list{
+    list-style: none;
+    display: flex;
+    gap: 25px;
     font-size: 1.4rem;
 }
-.menu ul li b:hover{
+.list b:hover{
     color: #FFD77F;
     cursor: pointer;
 }
 .login-panel{
     float: left;
     width: 10%;
+}
+.navbar label, #toggler, i{
+    display: none;
+    font-size: 2.0rem;
+}
+@media screen and (max-width: 600px){
+    .menu{
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+    }
+    .list{
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+    .login-panel{
+        margin-left: 30%;
+    }
+    .navbar label, i{
+        display: inline-flex;
+        align-items: center;
+        justify-items: start;
+        cursor: pointer;
+        margin-top: 10px;
+    }
+    #toggler:checked ~ .menu{
+        max-height: 100%;
+    }
+    .login-panel{
+        margin-left: 85%;
+        margin-top: -15%;
+    }
+    
 }
 .clearfix::after{
     content: "";
@@ -107,6 +144,7 @@ body::-webkit-scrollbar-thumb{
     height: 100%;
     padding: 10px;
     font-family: cursive, Geneva;
+    font-size: 1.4rem;
 }
 .slider-half-item article{
     margin: 2rem;
@@ -129,6 +167,13 @@ body::-webkit-scrollbar-thumb{
 }
 h2{
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+p#about-us-info{
+    margin-top: 100px;
+    text-align: center;
+    color: white;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    font-size: 2.5rem;
 }
 .orders-box{
     width: 50%;
@@ -188,26 +233,55 @@ h2{
 }
 table.baza{
     margin: auto;
-    width: 50rem;
+    width: 55rem;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 1.2rem;
+    background-color: #d5a75a;
+    color: black;   
+    word-wrap: break-word;
+}
+table.add-danie{
+    margin: auto;
+    width: 40rem;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 1.2rem;
     background-color: #d5a75a;
     color: black;   
 }
-table.baza thead{
+table.baza thead, table.add-danie thead{
     background-color: #000000;
     color: #ffffff;
     font-size: 1.7rem;
     min-height: 10px;
 }
-table.baza tr:hover{
+table.baza tr:hover, table.add-danie tr:hover{
     background-color: #d3af71;
     color: black;
 }
-table.baza input[type=text]{
+table.baza input[type=text], table.add-danie input[type=text]{
     width: 6.25rem;
     background-color: #FFD77F;
     margin-bottom: 3px;
+}
+table.baza button[type=submit], table button[type=submit]{
+    background-color: transparent;
+    color: black;
+    border: 1;
+    float: left;
+    margin: auto;
+    margin-left: 10%;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+table.baza button[type=submit]:hover, table.add-danie button[type=submit]:hover{
+    background-color: transparent;
+    color: white;
+    border: 1;
+    cursor: pointer;
+    font-size: 1rem;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 table.loguj{
     margin: auto;

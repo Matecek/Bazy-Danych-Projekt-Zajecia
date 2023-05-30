@@ -1,3 +1,4 @@
+<!-- górny div -->
     <div class="slider-box clearfix">
         <div class="slider-half-item">
           <article>
@@ -8,11 +9,13 @@
           &nbsp;
         </div>
     </div>
-      
+ 
+<!-- główny div -->
     <div class="advantages-box clearfix">
         
     <h2 class="center">Zarejestruj się</h2>
-
+    
+<!-- formularz rejestracji -->
     <form method="POST" action="add_user.php" id="addUser">
     <table border="1" class="loguj">
             <tr><td>Nazwa użytkownika<td></tr>
@@ -27,6 +30,7 @@
     </form>
 </div>
 <script>
+// dodawanie nowego użytkownika
 $(document).ready(function(){
     $('#addUser').submit(function(){       
         

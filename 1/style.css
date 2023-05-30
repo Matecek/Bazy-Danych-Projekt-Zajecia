@@ -26,7 +26,7 @@ body{
 
 #menu{
     background-color: #feb9bf;
-    color: #ffffff;
+    color: #000000;
     font-size: 1.75rem;
     width: 75rem;
     height: 34px;
@@ -65,7 +65,7 @@ table.baza{
 
 table.baza thead{
     background-color: #feb9bf;
-    color: #ffffff;
+    color: black;
     font-size: 1.625rem;
     min-height: 10px;
 }
@@ -144,7 +144,7 @@ table.loguj input[type=submit]:hover{
 
 #operacje-right table thead {
     background-color: #feb9bf;
-    color: #ffffff;
+    color: black;
     font-size: 1.4rem;
 }
 

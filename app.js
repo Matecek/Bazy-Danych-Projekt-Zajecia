@@ -16,6 +16,10 @@ $(document).ready(function(){
         $("main").load("menu.php");
     });
 
+    $("#about-us").click(function(){
+        $("main").load("about_us.php");
+    });
+
     $("#users").click(function(){
         $("main").load("klienci.php");
     });

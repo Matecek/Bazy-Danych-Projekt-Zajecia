@@ -1,3 +1,4 @@
+<!-- górny div -->
     <div class="slider-box clearfix">
         <div class="slider-half-item">
           <article>
@@ -8,11 +9,13 @@
           &nbsp;
         </div>
     </div>
-    
+
+<!-- głóny div --> 
     <div class="advantages-box clearfix">
 
         <h2 class="center">Zaloguj się</h2>
 
+    <!-- formularz z podaniem loginu i hasła -->
         <form method="POST" action="zaloguj.php" id="zaloguj">
         <table border="1" class="loguj">
                 <tr><td><input type="text" name="f_login" id="lLogin" placeholder="Nazwa użytkownika"></td></tr>
@@ -24,7 +27,6 @@
     </div>
 
 <script>
-
 $("#register").click(function(){
         $("main").load("register.php");
     })

@@ -1,3 +1,4 @@
+<!-- górny div -->
 <div class="slider-box clearfix">
         <div class="slider-half-item">
           <article>
@@ -8,7 +9,7 @@
           &nbsp;
         </div>
     </div>
-
+<!-- główny div -->
     <div class="advantages-box clearfix">
     <h2>Zamówienia</h2> 
     <div class="orders-box">
@@ -19,6 +20,7 @@
                 <select name="f_klient">
                     
                 <?php
+                // pokazanie opcji do wybrania klienta
                     session_start();
                     include 'dbconfig.php';
                     $lp=1;
@@ -47,6 +49,7 @@
                 <select name="f_menu">
                     
                 <?php
+                // pokazanie opcji do wybrania dania
                 
                     $baza = mysqli_connect($server,$user,$pass,$base) or ('coś nie tak z połączniem z BD');
 
@@ -82,7 +85,7 @@
             <thead><td>Lp.</td><td>idMenu</td><td>idTowar</td><td>Data</td></thead>
 
         <?php
-
+        // wyświetlenie tabeli "orders"
             $baza = mysqli_connect($server,$user,$pass,$base) or ('cos nie tak z połączeniem z BD');
 
             $zapytanie="SELECT * FROM orders ORDER BY data ASC";

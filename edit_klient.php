@@ -1,12 +1,13 @@
 <?php
     
-    $id=$_POST['f_id'];
+    $id=$_POST['f_id'];  // wyciągniecie id z formularza
 
     include 'dbconfig.php';
-    $baza = mysqli_connect($server,$user,$pass,$base) or ('coś nie tak z połączniem z BD');
+    $baza = mysqli_connect($server,$user,$pass,$base) or ('coś nie tak z połączniem z BD');  // połączenie z baza danych
 
-    $zapytanie="SELECT * FROM `klienci1` WHERE `id`='$id'";
+    $zapytanie="SELECT * FROM `klienci1` WHERE `id`='$id'"; // wyświetlenie wszystkich rekordów z bazy danych gdzie id równa się id podanemu w formularzu
     
+    // stworzenie tabeli umożliwiającej edycje klienta
     $result = $baza->query($zapytanie) or die ('bledne zapytanie');
         while($wiersz = $result->fetch_assoc())
             {
