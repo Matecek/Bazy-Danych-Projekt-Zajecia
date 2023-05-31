@@ -14,16 +14,8 @@ while($wiersz = $result->fetch_assoc())
                 session_start();
                 $_SESSION['user']=$wiersz['imie'];
             }
-                };   
+                };     
+            
         $baza->close();
-        
-        if(!isset($_SESSION['user'])) {
-            echo "Bledne logowanie";
-
-            $komunikat = date('l jS \of F Y h:i:s A').";".$login."\n";
-
-            $plik = fopen("login_error.txt", "a");
-            fwrite($plik,$komunikat);
-            fclose($plik);
-            }                
+ 
 ?>

@@ -2,7 +2,7 @@
 session_start();  // rozpoczęcie sesji
  
 include 'dbconfig.php';
-$baza = @new mysqli($server,$user,$pass,$base); // połączenie z baza danych
+$baza = mysqli_connect($server,$user,$pass,$base); // połączenie z baza danych
 
 if ($baza->connect_errno!=0){ 
     echo "Error: ".$baza->connect_errno;
@@ -19,14 +19,15 @@ if ($baza->connect_errno!=0){
             $wiersz = $result->fetch_assoc();
             $_SESSION['user'] = $wiersz['imie'];
 
-            unset($_SESSION['error']);
+            unset($_SESSION['error-register']);
+            unset($_SESSION['error-login']);
             $result->free_result();
             header('Location: index.php');
 
 
             echo $imie;
         }else{  // wypisanie błędu o złych danych
-            $_SESSION['error'] = "Nieprawidłowy login lub hasło!";
+            $_SESSION['error-login'] = "Nieprawidłowy login lub hasło!";
             header('Location: index.php');
         }
     

@@ -2,8 +2,8 @@
 -- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Czas generowania: 25 Maj 2023, 23:38
+-- Host: 127.0.0.1
+-- Czas generowania: 30 Maj 2023, 18:22
 -- Wersja serwera: 10.4.27-MariaDB
 -- Wersja PHP: 8.2.0
 
@@ -24,26 +24,25 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktura tabeli dla tabeli `klienci`
+-- Struktura tabeli dla tabeli `klienci1`
 --
 
-CREATE TABLE `klienci` (
+CREATE TABLE `klienci1` (
   `id` int(11) NOT NULL,
-  `nazwa` varchar(50) NOT NULL,
+  `imie` varchar(40) NOT NULL,
+  `nazwisko` varchar(40) NOT NULL,
+  `miejscowosc` varchar(50) NOT NULL,
   `ulica` varchar(50) NOT NULL,
-  `numer` varchar(20) NOT NULL,
-  `kod pocztowy` varchar(6) NOT NULL,
-  `miejscowość` varchar(50) NOT NULL
+  `numer` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
 
 --
--- Zrzut danych tabeli `klienci`
+-- Zrzut danych tabeli `klienci1`
 --
 
-INSERT INTO `klienci` (`id`, `nazwa`, `ulica`, `numer`, `kod pocztowy`, `miejscowość`) VALUES
-(1, 'Microtech', 'Oświecenia', '32', '32-600', 'Oświęcim'),
-(2, 'Komputronik', 'Chrzanowska', '12', '32-590', 'Chrzanów'),
-(19, 'Apple', 'Jana Pawła II', '34', '30-000', 'Kraków');
+INSERT INTO `klienci1` (`id`, `imie`, `nazwisko`, `miejscowosc`, `ulica`, `numer`) VALUES
+(2, 'Natalia', 'Nowak', 'Libiąż', 'Górnicza', '32'),
+(3, 'Jan', 'Kowalski', 'Oświęcim', 'Oświecenia', '6');
 
 -- --------------------------------------------------------
 
@@ -64,55 +63,29 @@ CREATE TABLE `menu` (
 --
 
 INSERT INTO `menu` (`id`, `nazwa`, `opis`, `wielkosc`, `cena`) VALUES
-(1, 'Margarita', 'Klasyczna pizza z samym serem', '40 cm', '28 zł'),
-(4, 'Capricciosa', 'Klasyczna pizza z szynką i pieczarkami', '40 cm', '30 zł'),
-(5, '', '', '', ''),
-(6, '', '', '', '');
+(4, 'Capricciosa', 'Klasyczna pizza z szynką i pieczarkami', '40 cm ', '30 zł'),
+(9, 'Margarita', 'Klasyczna pizza z serem', '40 cm', '28 zł');
 
 -- --------------------------------------------------------
 
 --
--- Struktura tabeli dla tabeli `operacje`
+-- Struktura tabeli dla tabeli `orders`
 --
 
-CREATE TABLE `operacje` (
+CREATE TABLE `orders` (
   `id` int(11) NOT NULL,
   `idKlient` int(11) NOT NULL,
-  `idTowar` int(11) NOT NULL,
+  `idMenu` int(11) NOT NULL,
   `data` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
 
 --
--- Zrzut danych tabeli `operacje`
+-- Zrzut danych tabeli `orders`
 --
 
-INSERT INTO `operacje` (`id`, `idKlient`, `idTowar`, `data`) VALUES
-(12, 1, 30, '2023-05-23'),
-(13, 19, 1, '2023-05-23'),
-(14, 19, 1, '2023-05-24');
-
--- --------------------------------------------------------
-
---
--- Struktura tabeli dla tabeli `towary`
---
-
-CREATE TABLE `towary` (
-  `id` int(11) NOT NULL,
-  `nazwa` varchar(50) NOT NULL,
-  `opis` varchar(100) NOT NULL,
-  `ilosc` varchar(20) NOT NULL,
-  `cena` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
-
---
--- Zrzut danych tabeli `towary`
---
-
-INSERT INTO `towary` (`id`, `nazwa`, `opis`, `ilosc`, `cena`) VALUES
-(1, 'Laptop', 'Laptop marki Apple', '3', '6999 zł'),
-(2, 'Telefon', 'Telefon iPhone 14 pro max', '2', '6499 zł'),
-(30, 'Tablet', 'iPad', '5', '5499 zł');
+INSERT INTO `orders` (`id`, `idKlient`, `idMenu`, `data`) VALUES
+(2, 3, 9, '2023-05-28'),
+(3, 2, 4, '2023-05-28');
 
 -- --------------------------------------------------------
 
@@ -139,9 +112,9 @@ INSERT INTO `users` (`id`, `login`, `pass`, `imie`) VALUES
 --
 
 --
--- Indeksy dla tabeli `klienci`
+-- Indeksy dla tabeli `klienci1`
 --
-ALTER TABLE `klienci`
+ALTER TABLE `klienci1`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -151,15 +124,9 @@ ALTER TABLE `menu`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeksy dla tabeli `operacje`
+-- Indeksy dla tabeli `orders`
 --
-ALTER TABLE `operacje`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indeksy dla tabeli `towary`
---
-ALTER TABLE `towary`
+ALTER TABLE `orders`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -173,34 +140,28 @@ ALTER TABLE `users`
 --
 
 --
--- AUTO_INCREMENT dla tabeli `klienci`
+-- AUTO_INCREMENT dla tabeli `klienci1`
 --
-ALTER TABLE `klienci`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+ALTER TABLE `klienci1`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT dla tabeli `menu`
 --
 ALTER TABLE `menu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
--- AUTO_INCREMENT dla tabeli `operacje`
+-- AUTO_INCREMENT dla tabeli `orders`
 --
-ALTER TABLE `operacje`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
-
---
--- AUTO_INCREMENT dla tabeli `towary`
---
-ALTER TABLE `towary`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+ALTER TABLE `orders`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT dla tabeli `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

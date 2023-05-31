@@ -82,8 +82,12 @@
         </div>
       </div>
         <?php                                                               // sesja z informacja o błędnym logowaniu
-               if(isset($_SESSION['error']))
-               echo "<p id='login-faild'>".$_SESSION['error']."</p>";
+               if(isset($_SESSION['error-login']))
+               echo "<p id='login-faild'>".$_SESSION['error-login']."</p>";
+        ?> 
+        <?php                                                               // sesja z informacja o błędnym logowaniu
+               if(isset($_SESSION['error-register']))
+               echo "<p id='login-faild'>".$_SESSION['error-register']."</p>";
         ?> 
 <!-- głowny div -->        
       <div class="advantages-box clearfix">

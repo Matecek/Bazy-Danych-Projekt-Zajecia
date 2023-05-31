@@ -1,6 +1,6 @@
 <?php
 $server="localhost"; // nazwa serwera
-$user="odadoz"; // nazwa użytkownika
-$pass="123456"; // hasło do użytkownika
+$user="pizzeria"; // nazwa użytkownika
+$pass="NT6SKWtUPR1fQae1"; // hasło do użytkownika
 $base="mup2023"; // nazwa bazy danych
 ?> 
