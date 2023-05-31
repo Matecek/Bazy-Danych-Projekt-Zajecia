@@ -85,7 +85,7 @@
                if(isset($_SESSION['error-login']))
                echo "<p id='login-faild'>".$_SESSION['error-login']."</p>";
         ?> 
-        <?php                                                               // sesja z informacja o błędnym logowaniu
+        <?php                                                               // sesja z informacja o błędej rejestracji
                if(isset($_SESSION['error-register']))
                echo "<p id='login-faild'>".$_SESSION['error-register']."</p>";
         ?> 
