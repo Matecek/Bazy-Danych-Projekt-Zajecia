@@ -3,6 +3,7 @@
         <div class="slider-half-item">
           <article>
             Projekt pizzerii
+            <hr>
           </article>
         </div>
         <div class="slider-half-item pizza-img">
