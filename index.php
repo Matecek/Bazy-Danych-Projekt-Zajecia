@@ -30,7 +30,7 @@
 </head>
 <body>
 <!-- nawigacja, menu -->
-    <header id="header" class="clearfix">
+    <header id="header">
       <div id="logo">
         <img width="60" src="https://cdn.pixabay.com/photo/2012/04/01/16/51/pizza-23477_960_720.png" alt="">
       </div>
@@ -71,10 +71,11 @@
     </header>
     <main>
 <!-- górny div  -->
-      <div class="slider-box clearfix">
+      <div class="slider-box">
         <div class="slider-half-item">
           <article>
             Projekt pizzerii
+            <hr>
           </article>
         </div>
         <div class="slider-half-item pizza-img">
@@ -85,12 +86,12 @@
                if(isset($_SESSION['error-login']))
                echo "<p id='login-faild'>".$_SESSION['error-login']."</p>";
         ?> 
-        <?php                                                               // sesja z informacja o błędej rejestracji
+        <?php                                                               // sesja z informacja o błędnej rejestracji
                if(isset($_SESSION['error-register']))
                echo "<p id='login-faild'>".$_SESSION['error-register']."</p>";
         ?> 
 <!-- głowny div -->        
-      <div class="advantages-box clearfix">
+      <div class="advantages-box">
         <div class="advantages-one-third">
           <div class="column-advantage best-ingredients">
             Najlepsze <br>składniki
@@ -109,7 +110,7 @@
       </div>  
     </main>
 <!-- stopka strony -->
-    <footer class="page-footer navbar">
+    <footer class="page-footer">
       <p id="copy">Author: Mateusz Wojtas © Copyright 2023. All Rights Reserved.</p>
     </footer>
         

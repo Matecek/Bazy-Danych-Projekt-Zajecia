@@ -1,5 +1,5 @@
 <!-- górny div -->
-<div class="slider-box clearfix">
+<div class="slider-box">
         <div class="slider-half-item">
           <article>
             Projekt pizzerii
@@ -10,7 +10,7 @@
         </div>
     </div>
 <!-- główny div -->
-    <div class="advantages-box clearfix">
+    <div class="advantages-box">
     <h2>Zamówienia</h2> 
     <div class="orders-box">
         <form method="POST" action="dodaj_order.php" id="dodajOrder">

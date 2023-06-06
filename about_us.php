@@ -1,5 +1,5 @@
 <!-- górny div  -->   
-<div class="slider-box clearfix">
+<div class="slider-box">
     <div class="slider-half-item">
         <article>
             Projekt pizzerii
@@ -11,6 +11,6 @@
 </div>
   
 <!-- główny div -->
-    <div class="advantages-box clearfix">
+    <div class="advantages-box">
         <p id="about-us-info">Nazywam sie Mateusz Wojtas <br> Jestem studentem informatyki na drugim roku <br> To jest mój projekt z przedmiotu bazy danych</p>
     </div>

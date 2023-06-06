@@ -22,24 +22,17 @@ body::-webkit-scrollbar-thumb{
     background: black;
     padding: 5px;
     font-family: 'Cookie', cursive;
-}
-#logo{
-    float: left;
-    width: 15%;
+    display: flex;
+    justify-content: space-between;
 }
 #logo img{
     width: 60px;
     margin-left: 10px;
 }
 .navbar{
-    float: left;
-    width: 65%;
-    text-align: center;
-    margin-right: 10%;
+    flex: 0 0 60%;
     display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
 }
 .list{
     list-style: none;
@@ -52,8 +45,11 @@ body::-webkit-scrollbar-thumb{
     cursor: pointer;
 }
 .login-panel{
-    float: left;
-    width: 10%;
+    flex: 0 0 20%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    font-size: 1.2rem;
 }
 .navbar label, #toggler, i{
     display: none;
@@ -70,29 +66,16 @@ body::-webkit-scrollbar-thumb{
         align-items: center;
         padding: 20px;
     }
-    .login-panel{
-        margin-left: 30%;
-    }
     .navbar label, i{
         display: inline-flex;
-        align-items: center;
-        justify-items: start;
+        align-items: flex-start;
         cursor: pointer;
         margin-top: 10px;
     }
     #toggler:checked ~ .menu{
         max-height: 100%;
     }
-    .login-panel{
-        margin-left: 85%;
-        margin-top: -15%;
-    }
     
-}
-.clearfix::after{
-    content: "";
-    display: block;
-    clear: both;
 }
 .login-panel .login-button{
     font-size: 1.2rem;
@@ -137,10 +120,13 @@ body::-webkit-scrollbar-thumb{
 .slider-box{
     height: 200px;
     background-color: black;
+    display: flex;
 }
 .slider-half-item{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     width: 50%;
-    float: left;
     height: 100%;
     padding: 10px;
     font-family: cursive, Geneva;
@@ -148,9 +134,6 @@ body::-webkit-scrollbar-thumb{
 }
 .slider-half-item article{
     margin: 2rem;
-}
-.slider-half-item article{
-    margin-top: 1rem;
 }
 .slider-half-item .button{
     text-transform: uppercase;
@@ -230,6 +213,9 @@ p#about-us-info{
     width: 100%;
     background-color: black;
     font-family: Cookie, cursive;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 table.baza{
     margin: auto;

@@ -1,5 +1,5 @@
 <!-- górny div  -->   
-   <div class="slider-box clearfix">
+   <div class="slider-box">
       <div class="slider-half-item">
         <article>
           Projekt pizzerii
@@ -11,7 +11,7 @@
     </div>
   
 <!-- główny div -->
-    <div class="advantages-box clearfix">
+    <div class="advantages-box">
       <div class="advantages-one-third">
         <div class="column-advantage best-ingredients">
           Najlepsze <br>składniki
