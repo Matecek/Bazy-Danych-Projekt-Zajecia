@@ -197,9 +197,6 @@ p#about-us-info{
     margin-left: 25%;
     word-wrap: break-word;
 }
-.advantages-one-third:nth-child(2) .column-advantage{
-    color: black;
-}
 .best-ingredients{
     background-image: url(https://cdn.pixabay.com/photo/2016/05/24/13/29/olive-oil-1412361__340.jpg);
 }
