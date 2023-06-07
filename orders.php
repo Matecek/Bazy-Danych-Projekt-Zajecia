@@ -83,7 +83,7 @@
     <div class="orders-box">
 
         <table border="1" class="order-table">
-            <thead><td>Lp.</td><td>idMenu</td><td>idTowar</td><td>Data</td></thead>
+            <thead><td>Lp.</td><td>idDania</td><td>idKlienta</td><td>Data</td></thead>
 
         <?php
         // wyświetlenie tabeli "orders"
