@@ -8,6 +8,12 @@
 body{
     background-image: url(https://cdn.pixabay.com/photo/2017/04/05/01/20/wood-2203740_1280.jpg);
 }
+html, body{
+    height: 100%;
+}
+main{
+    min-height: 100%;
+}
 body::-webkit-scrollbar{
     background-color: #d4d4d4;
     width: 10px;
@@ -167,7 +173,6 @@ p#about-us-info{
 .advantages-box{
     background-color: transparent;
     position: relative;
-    min-height: 400px;
     text-align: center;
     color: white;
     background-repeat: no-repeat;
@@ -213,6 +218,9 @@ p#about-us-info{
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 40px;
+    position: relative;
+    bottom: 0;
 }
 table.baza{
     margin: auto;
