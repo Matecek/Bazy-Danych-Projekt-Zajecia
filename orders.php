@@ -18,7 +18,7 @@
 
             <section>
                 <h2>Klient</h2>
-                <select name="f_klient">
+                <select name="f_klient" class="select-button">
                     
                 <?php
                 // pokazanie opcji do wybrania klienta
@@ -47,7 +47,7 @@
 
             <section>
                 <h2>Menu</h2>
-                <select name="f_menu">
+                <select name="f_menu" class="select-button">
                     
                 <?php
                 // pokazanie opcji do wybrania dania
@@ -77,7 +77,7 @@
             //<input type="date">
             ?>
         <br>
-            <button type="submit">Dodaj Zamówienie</button>
+            <button type="submit" class="select-button">Dodaj Zamówienie</button>
         </form>
     </div>
     <div class="orders-box">
