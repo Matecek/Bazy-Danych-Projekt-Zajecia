@@ -24,6 +24,7 @@ if ($baza->connect_errno!=0){
             unset($_SESSION['error-register']);
             $result = $baza->query($zapytanie);
         }else{ // jeśli liczba użytkownikó jest inna niz 0 wyświetla sie error
+            unset($_SESSION['error-login']);
             $_SESSION['error-register'] = "Istnieje użytkownik o takiej nazwie";
             header('Location: index.php');
         }
