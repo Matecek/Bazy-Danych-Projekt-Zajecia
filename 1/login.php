@@ -9,7 +9,7 @@
         <tr><td><input type="submit" value="Zaloguj" id="lHaslo"></td></tr>
         <tr><td><b id="register">Nie posiadasz konta? Zarejestruj się</b></td></tr>
     </table>
-</form>
+</form> 
 <script>
 $(document).ready(function(){
     $('#zaloguj').submit(function(){       
