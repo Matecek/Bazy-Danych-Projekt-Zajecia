@@ -30,6 +30,6 @@ $(document).ready(function(){
 
 $("#register").click(function(){
         $("#strona").load("register.php");
-    })
+    });
 
 </script>
